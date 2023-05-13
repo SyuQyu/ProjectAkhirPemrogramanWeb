@@ -12,11 +12,11 @@ if(isset($_POST['uname']) && isset($_POST['pass'])){
 
     if(empty($uname)){
         $em = "User name is required";
-        header("Location: ../login.php?error=$em&$data");
+        header("Location: ../../login.php?error=$em&$data");
         exit;
     }else if(empty($pass)){
         $em = "Password is required";
-        header("Location: ../login.php?error=$em&$data");
+        header("Location: ../../login.php?error=$em&$data");
         exit;
     }else {
 
@@ -38,28 +38,28 @@ if(isset($_POST['uname']) && isset($_POST['pass'])){
                     $_SESSION['id'] = $id;
                     $_SESSION['fname'] = $fname;
 
-                    header("Location: ../home.php");
+                    header("Location: ../../frontend/view/home.php");
                     exit;
                 }else {
                     $em = "Incorrect User name or password";
-                    header("Location: ../login.php?error=$em&$data&id=$username");
+                    header("Location: ../../login.php?error=$em&$data&id=$username");
                     exit;
                 }
 
             }else {
                 $em = "Incorrect User name or password";
-                header("Location: ../login.php?error=$em&$data&id=$id");
+                header("Location: ../../login.php?error=$em&$data&id=$id");
                 exit;
             }
 
         }else {
             $em = "Incorrect User name or password";
-            header("Location: ../login.php?error=$em&$data");
+            header("Location: ../../login.php?error=$em&$data");
             exit;
         }
     }
 
 }else {
-    header("Location: ../login.php?error=error");
+    header("Location: ../../login.php?error=error");
     exit;
 }

@@ -1,3 +1,5 @@
+<?php require '../../../backend/constants.php'; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +13,7 @@
     <div class="d-flex justify-content-center align-items-center vh-100">
     	
     	<form class="shadow w-450 p-3" 
-    	      action="auth/login.php" 
+    	      action="../../../backend/auth/login.php" 
     	      method="post">
 
     		<h4 class="display-4  fs-1">LOGIN</h4><br>
@@ -37,7 +39,7 @@
 		  </div>
 		  
 		  <button type="submit" class="btn btn-primary">Login</button>
-		  <a href="index.php" class="link-secondary">Sign Up</a>
+		  <a href="<?= BASEURL; ?>/index.php" class="link-secondary">Sign Up</a>
 		</form>
     </div>
 </body>
