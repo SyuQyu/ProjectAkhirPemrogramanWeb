@@ -13,7 +13,7 @@
     <div class="box-container">
         <div class="box">
             <div class="image">
-                <img src="images/img-1.jpg" alt="">
+                <img src="../assets/images/img-1.jpg" alt="">
             </div>
 
             <div class="content">
@@ -24,7 +24,7 @@
         
         <div class="box">
             <div class="image">
-                <img src="images/img-2.jpg" alt="">
+                <img src="../assets/images/img-2.jpg" alt="">
             </div>
 
             <div class="content">
@@ -36,7 +36,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-3.jpg" alt="">
+                <img src="../assets/images/img-3.jpg" alt="">
             </div>
 
             <div class="content">
@@ -47,7 +47,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-4.jpg" alt="">
+                <img src="../assets/images/img-4.jpg" alt="">
             </div>
 
             <div class="content">
@@ -58,7 +58,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-5.jpg" alt="">
+                <img src="../assets/images/img-5.jpg" alt="">
             </div>
 
             <div class="content">
@@ -69,7 +69,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-6.jpg" alt="">
+                <img src="../assets/images/img-6.jpg" alt="">
             </div>
 
             <div class="content">
@@ -80,7 +80,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-7.jpg" alt="">
+                <img src="../assets/images/img-7.jpg" alt="">
             </div>
 
             <div class="content">
@@ -91,7 +91,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-8.jpg" alt="">
+                <img src="../assets/images/img-8.jpg" alt="">
             </div>
 
             <div class="content">
@@ -102,7 +102,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-9.jpg" alt="">
+                <img src="../assets/images/img-9.jpg" alt="">
             </div>
 
             <div class="content">
@@ -113,7 +113,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-10.jpg" alt="">
+                <img src="../assets/images/img-10.jpg" alt="">
             </div>
 
             <div class="content">
@@ -124,7 +124,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-11.jpg" alt="">
+                <img src="../assets/images/img-11.jpg" alt="">
             </div>
 
             <div class="content">
@@ -135,7 +135,7 @@
 
         <div class="box">
             <div class="image">
-                <img src="images/img-12.jpg" alt="">
+                <img src="../assets/images/img-12.jpg" alt="">
             </div>
 
             <div class="content">
