@@ -11,7 +11,29 @@
 <body>
    <!-- Services -->
 <div id="services">
-	TEST
+	<h1 class="heading-title">Our Services</h1>
+	<div class="box-container">
+		<div class="box">
+			<img src="./frontend/assets/icons8-general-60.png" alt="">
+			<h4>General</h4>
+		</div>
+		<div class="box">
+			<img src="./frontend/assets/icons8-veterinarian-50.png" alt="">
+			<h4>Veterinarian</h4>
+		</div>
+		<div class="box">
+			<img src="./frontend/assets/icons8-dermatology-60.png" alt="">
+			<h4>Dermatologist</h4>
+		</div>
+		<div class="box">
+			<img src="./frontend/assets/icons8-surgery-50.png" alt="">
+			<h4>Psychiatrist</h4>
+		</div>
+		<div class="box">
+			<img src="./frontend/assets/icons8-dots-60.png" alt="">
+			<h4>And More</h4>
+		</div>
+	</div>
 </div>
 
    <!-- 
