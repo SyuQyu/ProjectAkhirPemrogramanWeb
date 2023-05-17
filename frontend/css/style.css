@@ -5,13 +5,15 @@
   --biruUngu: #6875f2;
   --biruTengah: #1c2ecd;
   --biruTua: #051287;
-
 }
+
+/* test commit */
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
   font-family: "Poppins", sans-serif;
 }
 
