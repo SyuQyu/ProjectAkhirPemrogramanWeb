@@ -1,6 +1,6 @@
-<link rel ="stylesheet" href="./css/packagesstyle.css">
+<link rel ="stylesheet" href="frontend\css\packagesstyle.css">
 
-<section class="packages">
+<section class="home-packages">
     <h1 class="heading-title">top destinations</h1>
     
     <div class="box-container">
@@ -141,4 +141,4 @@
     <div class="load-more"><span class="btn">load more</span></div>
 </section>
 
-<script src="./js/script.js"></script>
+<script src="frontend\js\script.js"></script>
