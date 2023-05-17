@@ -1,6 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+  --putih: #f5f6ff;
+  --biruUngu: #6875f2;
+  --biruTengah: #1c2ecd;
+  --biruTua: #051287;
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .w-450 {
-	width: 450px;
+  width: 450px;
 }
 .vh-100 {
-	min-height: 100vh;
+  min-height: 100vh;
 }
