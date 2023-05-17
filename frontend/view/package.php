@@ -1,5 +1,12 @@
-<link rel ="stylesheet" href="./css/packagesstyle.css">
 
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign Up</title>
+    <link rel ="stylesheet" href="../css/packagesstyle.css">
+</head>
+<body>
 <section class="packages">
     <h1 class="heading-title">top destinations</h1>
     
@@ -140,5 +147,5 @@
 
     <div class="load-more"><span class="btn">load more</span></div>
 </section>
-
-<script src="./js/script.js"></script>
+<script src="../js/script.js"></script>
+</body>
