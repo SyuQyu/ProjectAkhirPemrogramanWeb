@@ -5,62 +5,16 @@
   --biruUngu: #6875f2;
   --biruTengah: #1c2ecd;
   --biruTua: #051287;
-  --border:.1rem solid var(--biruTengah);
-  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
-  --text-shadow:0 1.5rem 3rem rgba(0,0,0,.3);
+
 }
 
-
-
 /* test commit */
-
-
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  outline: none; border: none;
-  text-decoration: none;
-  text-transform: capitalize;
-}
-
-html{
-  font-size: 62.5%;
-  overflow-x: hidden;
-}
-
-html::-webkit-scrollbar{
-  width: 1rem;
-}
-
-
-html::-webkit-scrollbar-track{
-  background-color: var(--biruTengah);
-}
-
-html::-webkit-scrollbar-thumb{
-  background-color: var(--biruUngu);
-  border-radius: 1rem;
-}
-
-section{
-  padding: 5rem 10%;
-}
-
-.header{
-  position: sticky;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  background-color: var(--putih);
-  box-shadow: var(--box-shadow);
-  display: flex;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  align-items: center;
-  justify-content: space-between;
-
 }
 
 .flex-row {
