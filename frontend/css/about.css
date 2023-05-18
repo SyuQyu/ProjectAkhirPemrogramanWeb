@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+  --putih: #f5f6ff;
+  --biruUngu: #6875f2;
+  --biruTengah: #1c2ecd;
+  --biruTua: #051287;
+
+}
+
+/* test commit */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+#services {
+  text-align: center;
+  padding: 0rem 2rem;
+}
+
+#services .heading-title {
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+#services h4 {
+  margin: 1.25rem 0rem 0rem 0rem;
+}
+
+#services .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem;
+}
+
+#services .box-container .box {
+  padding: 2rem 2rem;
+  background-color: var(--biruUngu);
+  border-radius: 2rem;
+}
+
+.w-450 {
+  width: 450px;
+}
+.vh-100 {
+  min-height: 100vh;
+}
+
+/* About CSS Start */
+.abts {
+    background-color: black;
+}
+
+.heading {
+    background-size: cover !important;
+    background-position: cover !important;
+    background: url(../assets/images/About.jpg) center no-repeat;
+    padding-top: 5rem;
+    padding-bottom: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.heading h1 {
+    font-size: 7rem;
+    text-transform: uppercase;
+    color: var(--putih);
+    text-shadow: var(--text-shadow);
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.about .image{
+    flex: 1 1 40rem;
+}
+
+.about .image img {
+    width: 100%;
+}
+
+.about .content {
+    flex: 1 1 41rem;
+    text-align: center;
+}
+
+.about .content h3 {
+    font-size: 2rem;
+    color: var(--biruTua);
+}
+
+.about .content p {
+    font-size: 1rem;
+    color: var(--biruUngu);
+    line-height: 2;
+    padding: 1rem 0;
+}
+
+.about .content .icons-container{
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.about .content .icons-container .icons {
+    background: var(--putih);
+    padding: 2rem;
+}
+
+.about .content .icons-container .icons i {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--biruTengah);
+}
+
+.about .content .icons-container .icons span {
+    font-size: 1rem;
+    color: var(--biruUngu);
+    display: block;
+}
+/* About CSS End */
+
+@media only screen and (max-width: 767px) {
+  /* CSS styles for mobile devices */
+  /* Example: */
+}
