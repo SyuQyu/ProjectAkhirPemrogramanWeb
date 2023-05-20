@@ -29,7 +29,7 @@
 #services {
   text-align: center;
   padding: 2rem 2rem;
-  margin: 100px 0;
+  margin-bottom: 100px;
 }
 
 #services .heading-title {
@@ -62,11 +62,11 @@
   min-height: 100vh;
 }
 
-.hero {
+.header {
   padding: 10rem;
   display: flex;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../assets/images/team-doctors.jpg");
+    url("../assets/team-doctors.jpg");
   background-size: cover;
   background-position: center;
   height: 700px; /* Adjust the height as needed */
@@ -103,38 +103,10 @@
   background-color: var(--biruUngu);
 
   color: var(--putih);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .hero-section button:hover {
   background-color: #525baf;
   font-weight: bold;
-}
-
-.offer {
-  font-weight: bold;
-  text-align: center;
-  background-color: var(--biruUngu);
-  align-items: center;
-
-  padding: 5rem 10%;
-  color: var(--putih);
-  margin-bottom: 75px;
-}
-
-.offer p {
-  font-weight: 500;
-}
-
-.offer button {
-  padding: 1rem 2rem;
-  border: none;
-  background-color: var(--putih);
-  color: var(--biruUngu);
-  font-weight: bold;
-}
-
-.offer button:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 @media only screen and (max-width: 767px) {

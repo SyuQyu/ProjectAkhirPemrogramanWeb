@@ -11,8 +11,8 @@
 <body>
 
 
- <!-- Hero starts-->
- <div class="hero">
+ <!-- Header starts-->
+ <div class="header">
 	<div class="overlay"></div>
  <div class="hero-section">
 	
@@ -22,7 +22,7 @@
 	</div>
  </div>
 
-	  <!-- Hero ends-->
+	  <!-- Header ends-->
 
    <!-- Services starts-->
 <div id="services">
@@ -57,7 +57,6 @@
 		<h1>Special Offer!</h1>
 		<h3>Up to 20% Off</h3>
 		<p>Enter your email to receive a 20% discount coupon to use on your first purchase</p>
-		<button>More Info</button>
 	</div>
   </div>
   <!-- Offer Ends -->
