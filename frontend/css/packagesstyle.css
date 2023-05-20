@@ -1,13 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+    --putih: #f5f6ff;
+    --biruUngu: #6875f2;
+    --biruTengah: #1c2ecd;
+    --biruTua: #051287;
+    --dark-bg: rgba(0, 0, 0, .7);
+    --light-bg: #eee;
+    --border: .1rem solid var(--black);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    --text-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .3);
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    width: 1 rem;
+}
+
+html::-webkit-scrollbar-track{
+    background-color: var(--putih);
+}
+
+html::-webkit-scrollbar-track{
+    background-color: var(--biruUngu);
+}
+
+section {
+    padding: 5rem 10%;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--biruTua);
+    margin-top: 1rem;
+    color: var(--putih);
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--biruUngu);
+}
+
+.heading-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
 .packages .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, mimax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
 }
 
 .packages .box-container .box {
     border: var(--border);
     box-shadow: var(--box-shadow);
-    background: var(--white);
+    background: var(--putih);
     display: none;
 }
 
@@ -43,12 +111,12 @@
 
 .packages .box-container .box .content h3 {
     font-size: 2.5rem;
-    color: var(--black);
+    color: var(--biruTua);
 }
 
 .packages .box-container .box .content p {
     font-size: 1.4rem;
-    color: var(--light-black);
+    color: var(--biruTua);
     line-height: 2;
     padding: 1rem 0;
 }
@@ -56,4 +124,30 @@
 .packages .load-more {
     text-align: center;
     margin-top: 2rem;
+}
+
+@media (max-width: 1200px) {
+    section {
+        padding: 3rem 5%;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .heading-title {
+        font-size: 3.5rem;
+    }
 }
