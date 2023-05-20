@@ -4,12 +4,13 @@
   --main-color: #8e44ad;
   --black:#222;
   --white:#fff;
+  --birutua:#051287;
+  --biruTengah: #1c2ecd;
   --light-black:#777;
   --light-white:#fff9;
   --dark-bg:rgba(0,0,0,.7);
   --light-bg:#eee;
-  --border:.1rem solid var(--black);
-  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+  --border:.1rem solid var(--white);
   --text-shadow:0 1.5rem 3rem rgba(0,0,0,.3);
 }
 
@@ -25,7 +26,6 @@
   box-sizing: border-box;
   outline: none; border: none;
   text-decoration: none;
-  text-transform: capitalize;
 }
 
 html{
@@ -54,12 +54,29 @@ section{
   position: sticky;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background-color: var(--black);
+  background-color: var(--white);
   display: flex;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  box-shadow: var(--box-shadow);
   align-items: center;
   justify-content: space-between;
 
+}
+
+.header .logo{
+  font-size: 2.5rem;
+  color: var(--birutua);
+  font-weight: bolder;
+}
+
+.header .navbar a{
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  font-weight: 500;
+  color: var(--light-black);
+  text-transform: capitalize;
+}
+
+.header .navbar a:hover{
+  color: var(--biruTengah);
 }
