@@ -35,7 +35,7 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fugiat vitae ipsum sunt!
                         Excepturi ipsum nihil quasi! Incidunt voluptatum quaerat magnam totam id eius iusto, magni nihil
                         assumenda, consequatur ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <a href="booking.php" class="btn">book now</a>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fugiat vitae ipsum sunt!
                         Excepturi ipsum nihil quasi! Incidunt voluptatum quaerat magnam totam id eius iusto, magni nihil
                         assumenda, consequatur ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <a href="booking.php" class="btn">book now</a>
                 </div>
             </div>
             <div class="box">
@@ -62,7 +62,7 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fugiat vitae ipsum sunt!
                         Excepturi ipsum nihil quasi! Incidunt voluptatum quaerat magnam totam id eius iusto, magni
                         nihil assumenda, consequatur ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <a href="booking.php" class="btn">book now</a>
                 </div>
             </div>
             <div class="box">
@@ -75,7 +75,7 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fugiat vitae ipsum sunt!
                         Excepturi ipsum nihil quasi! Incidunt voluptatum quaerat magnam totam id eius iusto,
                         magni nihil assumenda, consequatur ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <a href="booking.php" class="btn">book now</a>
                 </div>
             </div>
             <div class="box">
@@ -88,7 +88,7 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fugiat vitae ipsum
                         sunt! Excepturi ipsum nihil quasi! Incidunt voluptatum quaerat magnam totam id eius
                         iusto, magni nihil assumenda, consequatur ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <a href="booking.php" class="btn">book now</a>
                 </div>
             </div>
             <div class="box">
@@ -101,7 +101,7 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fugiat vitae
                         ipsum sunt! Excepturi ipsum nihil quasi! Incidunt voluptatum quaerat magnam
                         totam id eius iusto, magni nihil assumenda, consequatur ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <a href="booking.php" class="btn">book now</a>
                 </div>
             </div>
             <div class="box">
@@ -114,7 +114,7 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fugiat vitae
                         ipsum sunt! Excepturi ipsum nihil quasi! Incidunt voluptatum quaerat magnam
                         totam id eius iusto, magni nihil assumenda, consequatur ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <a href="booking.php" class="btn">book now</a>
                 </div>
             </div>
             <div class="box">
@@ -128,7 +128,7 @@
                         vitae ipsum sunt! Excepturi ipsum nihil quasi! Incidunt voluptatum
                         quaerat magnam totam id eius iusto, magni nihil assumenda, consequatur
                         ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <a href="booking.php" class="btn">book now</a>
                 </div>
             </div>
             <div class="box">
@@ -142,7 +142,7 @@
                         fugiat vitae ipsum sunt! Excepturi ipsum nihil quasi! Incidunt
                         voluptatum quaerat magnam totam id eius iusto, magni nihil
                         assumenda, consequatur ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <a href="booking.php" class="btn">book now</a>
                 </div>
             </div>
             <div class="box">
@@ -156,7 +156,7 @@
                         fugiat vitae ipsum sunt! Excepturi ipsum nihil quasi! Incidunt
                         voluptatum quaerat magnam totam id eius iusto, magni nihil
                         assumenda, consequatur ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <a href="booking.php" class="btn">book now</a>
                 </div>
             </div>
             <div class="box">
@@ -170,7 +170,7 @@
                         Eaque fugiat vitae ipsum sunt! Excepturi ipsum nihil quasi!
                         Incidunt voluptatum quaerat magnam totam id eius iusto,
                         magni nihil assumenda, consequatur ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <a href="booking.php" class="btn">book now</a>
                 </div>
             </div>
         </div>
