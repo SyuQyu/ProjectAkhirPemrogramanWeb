@@ -58,7 +58,6 @@
     border: var(--border);
     box-shadow: var(--box-shadow);
     background: var(--putih);
-    display: none;
 }
 
 .packages .box-container .box:nth-child(1),
