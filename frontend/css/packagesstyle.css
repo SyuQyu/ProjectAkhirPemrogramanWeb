@@ -19,8 +19,8 @@
     box-sizing: border-box;
     outline: none;
     border: none;
-    text-decoration: none;
     text-transform: capitalize;
+    text-decoration: none !important;
 }
 
 html {

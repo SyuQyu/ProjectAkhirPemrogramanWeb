@@ -1,18 +1,23 @@
+<html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../css/coba.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./frontend/css/head.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./frontend/css/style.css">
+    <link rel="stylesheet" href="./frontend/css/inidia.css">
+    <link rel="stylesheet" type="text/css" href="./frontend/css/homeAbout.css">
+    <link rel="stylesheet" href="./frontend/css/homepackagesstyle.css">
 </head>
+
 <body>
-   <section class="header">
-    <a href="home.php" class="logo">weCare</a>
-
-    <nav class="navbar">
-        <a href="home.php">home</a>
-        <a href="homeAbout.php">about us</a>
-        <a href="homepackages.php">booking</a>
-    </nav>
-
-
-</section>
-</body>
+    <section class="header">
+        <a href="home.php" class="logo">weCare</a>
+        <nav class="navbar">
+            <a href="index.php">home</a>
+            <a href="./frontend/view/about.php">about us</a>
+            <a href="./frontend/view/package.php">package</a>
+            <a href="./frontend/view/auth/login.php">login</a>
+        </nav>
+    </section>

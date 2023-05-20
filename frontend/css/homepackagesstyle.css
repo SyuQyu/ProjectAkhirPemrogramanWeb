@@ -19,7 +19,7 @@
     box-sizing: border-box;
     outline: none;
     border: none;
-    text-decoration: none;
+    text-decoration: none !important;
     text-transform: capitalize;
 }
 
@@ -70,6 +70,10 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 .home-packages .box-container .box .image {
