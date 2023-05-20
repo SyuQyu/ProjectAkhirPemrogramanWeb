@@ -35,7 +35,7 @@
                 Nulla inventore eveniet, quasi a dignissimos ex molestiae laudantium soluta illo harum!
                 Accusantium autem doloremque tempore saepe ratione, fugiat ex hic ipsum.
             </p>
-            <a href="about.php" class="btn">read more</a>
+            <a href="../view/about.php" class="btn">read more</a>
         </div>
 
     </section>
