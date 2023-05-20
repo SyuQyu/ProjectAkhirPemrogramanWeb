@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+  --putih: #f5f6ff;
+  --biruUngu: #6875f2;
+  --biruTengah: #1c2ecd;
+  --biruTua: #051287;
+
+}
+
+/* test commit */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+#services {
+  text-align: center;
+  padding: 0rem 2rem;
+}
+
+#services .heading-title {
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+#services h4 {
+  margin: 1.25rem 0rem 0rem 0rem;
+}
+
+#services .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem;
+}
+
+#services .box-container .box {
+  padding: 2rem 2rem;
+  background-color: var(--biruUngu);
+  border-radius: 2rem;
+}
+
+.w-450 {
+  width: 450px;
+}
+.vh-100 {
+  min-height: 100vh;
+}
+
+/* Reviews CSS Start */
+.reviews {
+  background: var(--biruUngu);
+}
+
+.reviews .slide {
+  padding: 1.5rem;
+  border: black 1px solid;
+  background: var(--putih);
+  text-align: center;
+  box-shadow: 5px 10px grey;
+  user-select: none;
+}
+
+.reviews .slide .stars {
+  padding-bottom: 0.5rem;
+}
+
+.reviews .slide .stars i {
+  font-size: 1.7rem;
+  color: var(--biruTua);
+}
+
+.reviews .slide p {
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0,0.5);
+}
+
+.reviews .slide h3 {
+  font-size: 2rem;
+  color: black;
+}
+
+.reviews .slide span {
+  font-size: 1.5rem;
+  color: var(--biruTua);
+  display: block;
+}
+
+.reviews .slide img {
+  height: 7rem;
+  width: 8rem;
+  border: black 2px solid;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+/* Reviews CSS End */
+
+@media only screen and (max-width: 767px) {
+  /* CSS styles for mobile devices */
+  /* Example: */
+}
