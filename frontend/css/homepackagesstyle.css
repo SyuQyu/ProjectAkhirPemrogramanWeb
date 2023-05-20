@@ -11,7 +11,9 @@
     --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     --text-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .3);
 }
-
+.bg-red {
+    background-color: red;
+}
 * {
     font-family: "Poppins", sans-serif;
     margin: 0;
@@ -25,15 +27,37 @@
 
 .home-packages .box-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, mimax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 2rem;
 }
 
-.packages .box-container .box {
+.home-packages .box-container .box .image {
+    height: 25rem;
+    overflow: hidden;
+}
+
+.home-packages .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.home-packages .box-container .box .content p {
+    font-size: 1.5rem;
+    color: var(--biruTua);
+    line-height: 2;
+    padding: 1rem 0;
+}
+
+.home-packages {
+    background-color: var(--light-bg);
+}
+
+.home-packages .box-container .box {
     border: var(--border);
     box-shadow: var(--box-shadow);
     background: var(--putih);
-    display: none;
 }
 
 .packages .box-container .box:nth-child(1),
@@ -71,11 +95,10 @@
     color: var(--biruTua);
 }
 
-.home-packages .box-container .box .content p {
-    font-size: 1.4rem;
-    color: var(--biruTua);
-    line-height: 2;
-    padding: 1rem 0;
+
+.home-packages .box-container .box .content {
+    padding: 2rem;
+    text-align: center;
 }
 
 .home-packages .load-more {
