@@ -9,7 +9,22 @@
 	<link rel="stylesheet" type="text/css" href="./frontend/css/style.css">
 </head>
 <body>
-   <!-- Services -->
+
+
+ <!-- Header starts-->
+ <div class="header">
+	<div class="overlay"></div>
+ <div class="hero-section">
+	
+	<p>We Care About Your Health</p>
+	<h1>Bersama Menuju Kesehatan</h1>
+	<button>Discover Tour</button>
+	</div>
+ </div>
+
+	  <!-- Header ends-->
+
+   <!-- Services starts-->
 <div id="services">
 	<h1 class="heading-title">Our Services</h1>
 	<div class="box-container">
@@ -18,7 +33,7 @@
 			<h4>General</h4>
 		</div>
 		<div class="box">
-			<img src="./frontend/assets/icons8-veterinarian-50.png" alt="">
+			<img src="./frontend/assets/icons8-dog-60.png" alt="">
 			<h4>Veterinarian</h4>
 		</div>
 		<div class="box">
@@ -26,7 +41,7 @@
 			<h4>Dermatologist</h4>
 		</div>
 		<div class="box">
-			<img src="./frontend/assets/icons8-surgery-50.png" alt="">
+			<img src="./frontend/assets/icons8-counselor-60.png" alt="">
 			<h4>Psychiatrist</h4>
 		</div>
 		<div class="box">
@@ -35,7 +50,7 @@
 		</div>
 	</div>
 </div>
-
-   <!-- 
+<!-- Services Ends-->
+  
 </body>
 </html>

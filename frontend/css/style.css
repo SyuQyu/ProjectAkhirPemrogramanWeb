@@ -5,7 +5,6 @@
   --biruUngu: #6875f2;
   --biruTengah: #1c2ecd;
   --biruTua: #051287;
-
 }
 
 /* test commit */
@@ -29,15 +28,18 @@
 
 #services {
   text-align: center;
-  padding: 0rem 2rem;
+  padding: 2rem 2rem;
+  margin-bottom: 100px;
 }
 
 #services .heading-title {
   margin-bottom: 2rem;
   padding-top: 2rem;
+  font-weight: bold;
 }
 
 #services h4 {
+  color: var(--putih);
   margin: 1.25rem 0rem 0rem 0rem;
 }
 
@@ -58,6 +60,53 @@
 }
 .vh-100 {
   min-height: 100vh;
+}
+
+.header {
+  padding: 10rem;
+  display: flex;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/team-doctors.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 700px; /* Adjust the height as needed */
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--putih);
+}
+
+.hero-section {
+  margin-top: 5rem;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+
+  transition: opacity 0.5 ease-in;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.hero-section button {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background-color: var(--biruUngu);
+
+  color: var(--putih);
+}
+.hero-section button:hover {
+  background-color: #525baf;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 767px) {
