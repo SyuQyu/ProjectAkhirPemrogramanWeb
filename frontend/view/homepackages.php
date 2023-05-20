@@ -9,7 +9,7 @@
 
 <body>
     <section class="home-packages">
-        <h1 class="bg-red">top destinations</h1>
+        <h1 class="heading-title">top destinations</h1>
         <div class="box-container">
             <div class="box">
                 <div class="image">
