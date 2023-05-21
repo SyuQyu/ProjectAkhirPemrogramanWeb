@@ -5,9 +5,9 @@
         <div class="overlay"></div>
         <div class="hero-section">
 
-            <p>We Care About Your Health</p>
-            <h1>Bersama Menuju Kesehatan</h1>
-            <button>Discover Tour</button>
+            <p class="p-hero-selection">We Care About Your Health</p>
+            <h1 class="h1-hero-selection">Bersama Menuju Kesehatan</h1>
+            <button class="p-hero-selection">Discover Tour</button>
         </div>
     </div>
 
