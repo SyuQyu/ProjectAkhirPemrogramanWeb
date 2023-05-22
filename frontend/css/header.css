@@ -63,7 +63,7 @@
   min-height: 100vh;
 }
 
-.header {
+.hero {
   padding: 10rem;
   display: flex;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -84,7 +84,7 @@
   position: relative;
   text-align: center;
   z-index: 2;
-
+  font-size: 4rem;
   transition: opacity 0.5 ease-in;
 }
 
@@ -93,7 +93,7 @@
 }
 
 .hero-section h1 {
-  font-size: 4rem;
+  font-size: 9rem;
   font-weight: bold;
 }
 

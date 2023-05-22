@@ -12,7 +12,7 @@
 
 
  <!-- Header starts-->
- <div class="header">
+ <div class="hero">
 	<div class="overlay"></div>
  <div class="hero-section">
 	
