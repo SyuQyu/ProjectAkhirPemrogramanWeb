@@ -89,6 +89,7 @@
   transition: opacity 0.5 ease-in !important;
 }
 
+<<<<<<< HEAD
 .hero-section p {
   font-size: 1.5rem !important; 
 }
@@ -96,6 +97,15 @@
 .hero-section h1 {
   font-size: 4rem !important;
   font-weight: bold !important;
+=======
+.hero-section .p-hero-selection {
+  font-size: 2rem !important;
+}
+
+.hero-section .h1-hero-selection {
+  font-size: 4rem !important;
+  font-weight: bold;
+>>>>>>> d01ffcf2576d2df551a08dcc48ce1070b782011b
 }
 
 .hero-section button {
