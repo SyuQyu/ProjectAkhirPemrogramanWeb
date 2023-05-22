@@ -65,77 +65,86 @@
 }
 
 .hero {
-  padding: 10rem;
-  display: flex;
+  padding: 10rem !important;
+  display: flex !important;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../assets/images/team-doctors.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 700px; /* Adjust the height as needed */
+    url("../assets/images/team-doctors.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  height: 700px !important; /* Adjust the height as needed */
 
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+  text-align: center !important;
+  justify-content: center!important;
+  align-items: center !important;
 
-  color: var(--putih);
+  color: var(--putih) !important;
 }
 
 .hero-section {
-  margin-top: 5rem;
-  position: relative;
-  text-align: center;
-  z-index: 2;
+  margin-top: 5rem !important;
+  position: relative !important;
+  text-align: center !important;
+  z-index: 2 !important;
 
-  transition: opacity 0.5 ease-in;
+  transition: opacity 0.5 ease-in !important;
 }
 
 .hero-section p {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important; 
 }
 
 .hero-section h1 {
-  font-size: 4rem;
+  font-size: 4rem !important;
+  font-weight: bold !important;
+}
+
+.hero-section .p-hero-selection {
+  font-size: 2rem !important;
+}
+
+.hero-section .h1-hero-selection {
+  font-size: 4rem !important;
   font-weight: bold;
 }
 
 .hero-section button {
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  background-color: var(--biruUngu);
+  border: none !important;
+  padding: 1rem 2rem !important;
+  border-radius: 2rem !important;
+  background-color: var(--biruUngu) !important;
 
-  color: var(--putih);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: var(--putih) !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
 }
 .hero-section button:hover {
-  background-color: #525baf;
-  font-weight: bold;
+  background-color: #525baf !important;
+  font-weight: bold !important;
 }
 
 .offer {
-  font-weight: bold;
-  text-align: center;
-  background-color: var(--biruUngu);
-  align-items: center;
+  font-weight: bold !important;
+  text-align: center !important;
+  background-color: var(--biruUngu) !important;
+  align-items: center !important;
 
-  padding: 5rem 10%;
-  color: var(--putih);
+  padding: 5rem 10% !important;
+  color: var(--putih) !important;
 }
 
 .offer p {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 .offer button {
-  padding: 1rem 2rem;
-  border: none;
-  background-color: var(--putih);
-  color: var(--biruUngu);
-  font-weight: bold;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  background-color: var(--putih) !important;
+  color: var(--biruUngu) !important;
+  font-weight: bold !important;
 }
 
 .offer button:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
 }
 
 @media only screen and (max-width: 767px) {
