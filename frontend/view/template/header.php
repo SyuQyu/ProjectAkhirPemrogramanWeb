@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="./frontend/css/inidia.css">
     <link rel="stylesheet" type="text/css" href="./frontend/css/homeAbout.css">
     <link rel="stylesheet" href="./frontend/css/homepackagesstyle.css">
+    <link rel="stylesheet" href="./frontend/css/reviews.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 </head>
 
 <body>

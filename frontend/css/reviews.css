@@ -63,7 +63,7 @@
 
 /* Reviews CSS Start */
 .reviews {
-  background: var(--biruUngu);
+  background: var(--putih) !important;
 }
 
 .reviews .slide {
