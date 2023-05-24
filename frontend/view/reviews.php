@@ -1,7 +1,8 @@
     <section class="reviews">
+        <h1>CLIENTS REVIEWS</h1>
         <div class="swiper reviews-slider">
             <div class="swiper-wrapper">
-                <div class="slide">
+                <div class="swiper-slider slide">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -16,7 +17,7 @@
                     <span>Gold</span>
                     <img src="./frontend/assets/images/img-5.jpg" alt="User">
                 </div>
-                <div class="slide">
+                <div class="swiper-slider slide">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -32,7 +33,7 @@
                     <span>Gold</span>
                     <img src="./frontend/assets/images/img-3.jpg" alt="User">
                 </div>
-                <div class="slide">
+                <div class="swiper-slider slide">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -48,7 +49,7 @@
                     <span>Platinum</span>
                     <img src="./frontend/assets/images/img-4.jpg" alt="User">
                 </div>
-                <div class="slide">
+                <div class="swiper-slider slide">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -64,7 +65,7 @@
                     <span>Silver</span>
                     <img src="./frontend/assets/images/img-12.jpg" alt="User">
                 </div>
-                <div class="slide">
+                <div class="swiper-slider slide">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
