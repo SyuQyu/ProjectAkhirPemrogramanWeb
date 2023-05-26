@@ -52,4 +52,7 @@
         </div>
     </div>
     <!-- Offer Ends -->
+    <!-- Review Starts -->
+    <?php require_once 'frontend/view/reviews.php';?>
+    <!-- Review Ends -->
 <?php require_once 'frontend/view/template/footer.php';?>

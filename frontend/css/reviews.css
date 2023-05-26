@@ -5,7 +5,8 @@
   --biruUngu: #6875f2;
   --biruTengah: #1c2ecd;
   --biruTua: #051287;
-
+  --border: .1rem solid var(--black);
+  --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
 
 /* test commit */
@@ -63,15 +64,21 @@
 
 /* Reviews CSS Start */
 .reviews {
-  background: var(--biruUngu);
+  background: var(--putih) !important;
+}
+
+.reviews h1 {
+  text-align: center !important;
+  font-size: 6rem !important;
+  margin-bottom: 25px !important;
 }
 
 .reviews .slide {
-  padding: 1.5rem;
-  border: black 1px solid;
+  padding: 2rem;
+  border: var(--border);
   background: var(--putih);
   text-align: center;
-  box-shadow: 5px 10px grey;
+  box-shadow: var(--box-shadow);
   user-select: none;
 }
 
@@ -87,6 +94,8 @@
 .reviews .slide p {
   font-size: 1.5rem;
   color: rgba(0, 0, 0,0.5);
+  line-height: 2;
+  padding: 1rem 0;
 }
 
 .reviews .slide h3 {
