@@ -26,6 +26,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
 </html>
 
 <?php }else {
-	header("Location: ../auth/login.php");
+	header("Location: ../view/auth/login.php");
 	exit;
 } ?>

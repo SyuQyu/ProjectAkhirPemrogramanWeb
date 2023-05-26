@@ -38,7 +38,7 @@ if(isset($_POST['uname']) && isset($_POST['pass'])){
                     $_SESSION['id'] = $id;
                     $_SESSION['fname'] = $fname;
 
-                    header("Location: ../../frontend/view/home.php");
+                    header("Location: ../../home.php");
                     exit;
                 }else {
                     $em = "Incorrect User name or password";

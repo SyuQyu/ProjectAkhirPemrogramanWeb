@@ -15,9 +15,23 @@
     <section class="header">
         <a href="home.php" class="logo">weCare</a>
         <nav class="navbar">
-            <a href="index.php">home</a>
+            <?php if($login) { ?>
+                <a href="home.php">home</a>
+            <?php 
+            } else {
+                echo '<a href="index.php">home</a>';
+            }
+            ?>
+            
             <a href="./frontend/view/about.php">about us</a>
             <a href="./frontend/view/package.php">package</a>
-            <a href="./frontend/view/auth/login.php">login</a>
+            <?php if($login) { ?>
+                <a href="./backend/auth/logout.php">Logout</a>
+            <?php 
+            } else {
+                echo '<a href="./frontend/view/auth/login.php">login</a>';
+            }
+            ?>
+            
         </nav>
     </section>

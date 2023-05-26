@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
+    $login = true;
+    ?>
+
+
 <html>
 
 <head>
@@ -13,9 +21,24 @@
     <section class="header">
         <a href="home.php" class="logo">weCare</a>
         <nav class="navbar">
-            <a href="../../index.php">home</a>
+            <?php if($login) { ?>
+                <a href="../../home.php">home</a>
+            <?php 
+            } else {
+                echo '<a href="index.php">home</a>';
+            }
+            ?>
+            
             <a href="about.php">about us</a>
             <a href="package.php">package</a>
+            <?php if($login) { ?>
+                <a href="../../backend/auth/logout.php">Logout</a>
+            <?php 
+            } else {
+                echo '<a href="./frontend/view/auth/login.php">login</a>';
+            }
+            ?>
+            
         </nav>
     </section>
     <section class="packages">
@@ -243,3 +266,8 @@
     </footer>
     <script src="../js/script.js"></script>
 </body>
+
+<?php } else {
+    header("Location: ../view/auth/login.php");
+    exit;
+}?>
