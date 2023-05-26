@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] == '2') {
+    $login = true;
+    ?>
+
+<?php    
+function getDoktor() {
+    require "../../../backend/db_conn.php";
+    $sql = "SELECT * FROM doktor where id_user = ?";
+    $stmt = $conn->prepare($sql); 
+    $stmt->execute([$_SESSION['id']]);
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+$data['doktor'] = getDoktor();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +24,7 @@
     <title>CSS Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../css/dokter.css">
+    <link rel="stylesheet" href="../../css/dokters.css">
 </head>
 
 <body>
@@ -25,10 +44,7 @@
                         </svg>
                     </p>
                     <ul class="dropdown-menu">
-                        <li><a href="#">action 1</a></li>
-                        <li><a href="#">action 2</a></li>
-                        <li><a href="#">action 3</a></li>
-                        <li><a href="#">action 4</a></li>
+                        <li><a href="../../../backend/auth/logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -46,7 +62,9 @@
         </div>
         <div class="w-80 p-relative">
             <article id="article-doktor">
-                <h1>London</h1>
+                <div class="custom-boxshadow">
+                <h1>Selamat Datang, <?= $data['doktor']['name'] ?></h1>
+                </div>
                 <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a
                     metropolitan area of over 13 million inhabitants.</p>
                 <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going
@@ -61,3 +79,8 @@
 </body>
 
 </html>
+
+<?php } else {
+    header("Location: ../../../home.php");
+    exit;
+}?>

@@ -31,14 +31,19 @@ if(isset($_POST['uname']) && isset($_POST['pass'])){
             $password =  $user['password'];
             $fname =  $user['fname'];
             $id =  $user['id'];
+            $ulevel =  $user['u_level'];
 
             if($username === $uname){
                 // Hash password sebelum memeriksa
                 if(password_verify($pass, $password)){
                     $_SESSION['id'] = $id;
                     $_SESSION['fname'] = $fname;
-
-                    header("Location: ../../home.php");
+                    $_SESSION['ulevel'] = $ulevel;
+                    if($ulevel == '1') {
+                        header("Location: ../../home.php");
+                    } else if($ulevel == '2') {
+                        header("Location: ../../frontend/view/dokter");
+                    }
                     exit;
                 }else {
                     $em = "Incorrect User name or password";

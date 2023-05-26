@@ -1,5 +1,10 @@
+<?php
+session_start();
+$IdDoktor = $_GET['idDoktor'];
+if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
+    $login = true;
+?>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,53 +16,61 @@
 
 <body>
     <section class="header">
-        <a href="home.php" class="logo">weCare</a>
-        <nav class="navbar">
-            <a href="../../index.php">home</a>
-            <a href="about.php">about us</a>
-            <a href="package.php">package</a>
-        </nav>
+        <?php if($login) { ?>
+            <a href="../../home.php" class="logo">WeCare</a>
+            <nav class="navbar">
+                <a href="../../home.php">home</a>
+                <a href="about.php">about us</a>
+                <a href="package.php">package</a>
+                <a href="../../backend/auth/logout.php">Logout</a>
+            </nav>
+        <?php } else { ?>
+            <a href="../../index.php" class="logo">WeCare</a>
+            <nav class="navbar">
+                <a href="../../index.php">home</a>
+                <a href="about.php">about us</a>
+                <a href="package.php">package</a>
+                <a href="./frontend/view/auth/login.php">login</a>
+            </nav>
+        <?php } ?>
     </section>
     <section class="booking">
         <h1 class="heading-title">book your doctor!</h1>
-
-        <form action="book_form.php" method="post" class="book-form">
+        <form action="../../backend/package_form.php" method="post" class="book-form">
+            <div class="inputBox" style="visibility: hidden; overflow: hidden;">
+                    <input type="text" name="id_user" value="<?= $_SESSION['id'] ?>">
+            </div>
+            <div class="inputBox" style="visibility: hidden; overflow: hidden;">
+                    <input type="text" name="id_dokter" value="<?= $IdDoktor ?>">
+            </div>
             <div class="flex">
                 <div class="inputBox">
                     <span>name: </span>
                     <input type="text" placeholder="enter your name" name="name">
                 </div>
-
                 <div class="inputBox">
                     <span>email: </span>
                     <input type="email" placeholder="enter your email" name="email">
                 </div>
-
                 <div class="inputBox">
                     <span>phone: </span>
                     <input type="number" placeholder="enter your number" name="phone">
                 </div>
-
                 <div class="inputBox">
                     <span>address: </span>
                     <input type="text" placeholder="enter your address" name="address">
                 </div>
-
                 <div class="inputBox">
                     <span>complaint: </span>
                     <input type="text" placeholder="enter your complaint" name="complaint">
                 </div>
             </div>
-
             <input type="submit" value="submit" class="btn" name="send">
         </form>
     </section>
     <footer class="footer-distributed">
-
         <div class="footer-left">
-
             <h3><span>weCare</span></h3>
-
             <p class="footer-links">
                 <a href="#">Home</a>
                 ·
@@ -110,3 +123,8 @@
 </body>
 
 </html>
+
+<?php } else {
+    header("Location: ../view/auth/login.php");
+    exit;
+}?>

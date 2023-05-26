@@ -93,7 +93,14 @@
     height: 50px;
     text-align: center;
 }
-
+.custom-boxshadow {
+    padding: 10px;
+    width: 30%;
+    margin-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 .dropdown {
     cursor: pointer;
     height: 50px;

@@ -5,7 +5,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
     $login = true;
     ?>
 
+<?php    
+function getAllDoktor() {
+    require "../../backend/db_conn.php";
+    $sql = "SELECT * FROM doktor";
+    $stmt = $conn->prepare($sql); 
+    $stmt->execute();
 
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+$data['doktor'] = getAllDoktor();
+?>
 <html>
 
 <head>
@@ -19,46 +30,44 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
 
 <body>
     <section class="header">
-        <a href="home.php" class="logo">weCare</a>
-        <nav class="navbar">
-            <?php if($login) { ?>
+        <?php if($login) { ?>
+            <a href="../../home.php" class="logo">WeCare</a>
+            <nav class="navbar">
                 <a href="../../home.php">home</a>
-            <?php 
-            } else {
-                echo '<a href="index.php">home</a>';
-            }
-            ?>
-            
-            <a href="about.php">about us</a>
-            <a href="package.php">package</a>
-            <?php if($login) { ?>
+                <a href="about.php">about us</a>
+                <a href="package.php">package</a>
                 <a href="../../backend/auth/logout.php">Logout</a>
-            <?php 
-            } else {
-                echo '<a href="./frontend/view/auth/login.php">login</a>';
-            }
-            ?>
-            
-        </nav>
+            </nav>
+        <?php } else { ?>
+            <a href="../../index.php" class="logo">WeCare</a>
+            <nav class="navbar">
+                <a href="../../index.php">home</a>
+                <a href="about.php">about us</a>
+                <a href="package.php">package</a>
+                <a href="./frontend/view/auth/login.php">login</a>
+            </nav>
+        <?php } ?>
     </section>
     <section class="packages">
         <h1 class="heading-title">top destinations</h1>
-
         <div class="box-container">
+        <?php foreach( $data['doktor'] as $doktor ) : ?>
             <div class="box">
                 <div class="image">
                     <img src="../assets/images/img-1.jpg" alt="">
                 </div>
 
                 <div class="content">
-                    <h3>adventure & tour</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque fugiat vitae ipsum sunt!
-                        Excepturi ipsum nihil quasi! Incidunt voluptatum quaerat magnam totam id eius iusto, magni nihil
-                        assumenda, consequatur ipsa!</p>
-                    <a href="book.php" class="btn">book now</a>
+                    <h3><?= $doktor['name'] ?></h3>
+                    <p><?= $doktor['review'] ?></p>
+                    <p><?= $doktor['harga'] ?></p>
+                    <p><?= $doktor['spesialis'] ?></p>
+                    <p><?= $doktor['pengalaman'] ?></p>
+                    <a href="booking.php?idDoktor=<?= $doktor['id'] ?>" class="btn">book now</a>
                 </div>
             </div>
-            <div class="box">
+            <?php endforeach; ?>
+            <!-- <div class="box">
                 <div class="image">
                     <img src="../assets/images/img-2.jpg" alt="">
                 </div>
@@ -205,7 +214,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
                         magni nihil assumenda, consequatur ipsa!</p>
                     <a href="booking.php" class="btn">book now</a>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="load-more"><span class="btn">load more</span></div>
     </section>

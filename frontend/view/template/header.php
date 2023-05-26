@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,30 +12,28 @@
     <link rel="stylesheet" href="./frontend/css/homepackagesstyle.css">
     <link rel="stylesheet" href="./frontend/css/reviews.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 
 <body>
     <section class="header">
-        <a href="home.php" class="logo">weCare</a>
+        <?php if($login) { ?>
+        <a href="home.php" class="logo">WeCare</a>
         <nav class="navbar">
-            <?php if($login) { ?>
-                <a href="home.php">home</a>
-            <?php 
-            } else {
-                echo '<a href="index.php">home</a>';
-            }
-            ?>
-            
+            <a href="home.php">home</a>
             <a href="./frontend/view/about.php">about us</a>
             <a href="./frontend/view/package.php">package</a>
-            <?php if($login) { ?>
-                <a href="./backend/auth/logout.php">Logout</a>
-            <?php 
-            } else {
-                echo '<a href="./frontend/view/auth/login.php">login</a>';
-            }
-            ?>
-            
+            <a href="./backend/auth/logout.php">Logout</a>
+        </nav>
+        <?php } else { ?>
+        <a href="index.php" class="logo">WeCare</a>
+        <nav class="navbar">
+            <a href="index.php">home</a>
+            <a href="./frontend/view/about.php">about us</a>
+            <a href="./frontend/view/package.php">package</a>
+            <a href="./frontend/view/auth/login.php">login</a>
+        </nav>
+        <?php } ?>
+
         </nav>
     </section>

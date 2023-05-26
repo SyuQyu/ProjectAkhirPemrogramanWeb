@@ -3,6 +3,10 @@ session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
     $login = true;
+}
+else {
+    $login = false;
+}
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,27 +25,23 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
 
 <body>
     <section class="header">
-        <a href="home.php" class="logo">WeCare</a>
+        <?php if($login) { ?>
+        <a href="../../home.php" class="logo">WeCare</a>
         <nav class="navbar">
-            <?php if($login) { ?>
-                <a href="../../home.php">home</a>
-            <?php 
-            } else {
-                echo '<a href="index.php">home</a>';
-            }
-            ?>
-            
+            <a href="../../home.php">home</a>
             <a href="about.php">about us</a>
             <a href="package.php">package</a>
-            <?php if($login) { ?>
-                <a href="../../backend/auth/logout.php">Logout</a>
-            <?php 
-            } else {
-                echo '<a href="./frontend/view/auth/login.php">login</a>';
-            }
-            ?>
-            
+            <a href="../../backend/auth/logout.php">Logout</a>
         </nav>
+        <?php } else { ?>
+            <a href="../../index.php" class="logo">WeCare</a>
+            <nav class="navbar">
+            <a href="../../index.php">home</a>
+            <a href="about.php">about us</a>
+            <a href="package.php">package</a>
+            <a href="./frontend/view/auth/login.php">login</a>
+        </nav>
+        <?php } ?>
     </section>
     <div class="heading">
         <h1>about us</h1>
@@ -141,8 +141,3 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
 </body>
 
 </html>
-
-<?php } else {
-    header("Location: ../view/auth/login.php");
-    exit;
-}?>

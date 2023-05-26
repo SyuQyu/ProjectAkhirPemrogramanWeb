@@ -4,5 +4,5 @@ session_start();
 session_unset();
 session_destroy();
 
-header("Location: ../../frontend/view/auth/login.php");
+header("Location: ../../index.php");
 exit;

@@ -1,5 +1,6 @@
 <?php require 'backend/constants.php';?>
-<?php require_once 'frontend/view/template/header.php';?>
+<?php $login = false; ?>
+<?php require 'frontend/view/template/header.php';?>
     <!-- Hero starts-->
     <div class="hero">
         <div class="overlay"></div>
