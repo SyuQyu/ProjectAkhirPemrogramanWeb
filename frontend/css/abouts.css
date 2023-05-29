@@ -114,11 +114,12 @@
     color: var(--biruTua);
 }
 
-.about .content p {
-    font-size: 1rem;
+.about .content .text-about {
+    font-size: 1.3rem;
     color: var(--biruUngu);
     line-height: 2;
     padding: 1rem 0;
+    text-align: justify;
 }
 
 .about .content .icons-container{

@@ -49,7 +49,7 @@ $data['doktor'] = getAllDoktor();
         <?php } ?>
     </section>
     <section class="packages">
-        <h1 class="heading-title">top destinations</h1>
+        <h1 class="heading-title">top doctor's</h1>
         <div class="box-container">
         <?php foreach( $data['doktor'] as $doktor ) : ?>
             <div class="box">
