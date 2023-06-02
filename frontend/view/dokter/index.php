@@ -7,13 +7,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
     ?>
 
 <?php    
-
+$accepted = 0;
+$declined = 0;
 $data['doktor'] = getDoktor();
 $data['booking'] = getBooking($data['doktor']['id']);
 
 function getAccepted($id, $bookingData) {
-    $accepted = 0;
-    $declined = 0;
+    global $accepted, $declined;
     if($id == 1) {
         foreach ($bookingData as $booking) {
             if ($booking['accepted'] == 1) {
@@ -30,6 +30,14 @@ function getAccepted($id, $bookingData) {
         return $declined;
     }
 }
+
+function income($doctorPrice) {
+    global $accepted, $declined;
+    $income = intval($doctorPrice) * intval($accepted);
+
+    return $income;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +50,9 @@ function getAccepted($id, $bookingData) {
 </head>
 
 <body>
+    <div style="display: none">
+        <?= getAccepted(1, $data['booking']); getAccepted(0, $data['booking']) ?>
+    </div>
     <header id="header-doktor">
         <div class="flex-parent-element">
             <div class="w-20">
@@ -66,17 +77,32 @@ function getAccepted($id, $bookingData) {
     </header>
     <section class="flex-parent-element">
         <div class="w-20">
-            <nav id="nav-doktor">
+            <nav id="nav-doktor-pc">
                 <ul>
                     <li><a class="nav-doktor-font" href="index.php">Dashboard</a></li>
                     <li><a class="nav-doktor-font" href="request_patient.php">Requested Patient</a></li>
+                </ul>
+            </nav>
+            <nav id="nav-doktor-phone">
+                <ul>
+                    <li><a class="nav-doktor-font" href="index.php">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                        </svg>
+                    </a></li>
+                    <li><a class="nav-doktor-font" href="request_patient.php">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                        </svg>
+                    </a></li>
                 </ul>
             </nav>
         </div>
         <div class="w-80 p-relative">
             <article id="article-doktor">
                 <div class="custom-boxshadow">
-                    <h1>Selamat Datang, <?= $data['doktor']['name']; $_SESSION['id'];?></h1>
+                    <h1>Selamat Datang, <?= $data['doktor']['name'];?></h1>
                 </div>
             </article>
             <div class="box-container-doktor">
@@ -113,7 +139,7 @@ function getAccepted($id, $bookingData) {
                             Total Pendapatan
                         </div>
                         <div class="box-text-number">
-                            50
+                            <?= income($data['doktor']['harga']); ?>
                         </div>
                     </div>
                 </div>
@@ -133,7 +159,7 @@ function getAccepted($id, $bookingData) {
                             Jumlah Pasien Diterima
                         </div>
                         <div class="box-text-number">
-                            <?= getAccepted(1, $data['booking']) ?>
+                            <?= $accepted ?>
                         </div>
                     </div>
                 </div>
@@ -151,7 +177,7 @@ function getAccepted($id, $bookingData) {
                             Jumlah Pasien Ditolak
                         </div>
                         <div class="box-text-number">
-                            <?= getAccepted(0, $data['booking']) ?>
+                            <?= $declined ?>
                         </div>
                     </div>
                 </div>

@@ -13,6 +13,10 @@
     text-decoration: none !important;
 }
 
+body {
+    overflow: hidden;
+}
+
 .flex-parent-element {
     display: flex;
     width: 100%;
@@ -56,11 +60,22 @@
 }
 
 /* Create two columns/boxes that floats next to each other */
-#nav-doktor {
+#nav-doktor-pc {
     position: relative;
     float: left;
     width: 100%;
     height: 91vh;
+    z-index: 0;
+    /* only for demonstration, should be removed */
+    background: var(--biruUngu);
+    padding: 20px;
+}
+
+#nav-doktor-phone {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 95vh;
     z-index: 0;
     /* only for demonstration, should be removed */
     background: var(--biruUngu);
@@ -78,11 +93,19 @@
 }
 
 /* Style the list inside the menu */
-#nav-doktor ul {
+#nav-doktor-pc ul {
     list-style-type: none;
     padding: 0;
 }
-#nav-doktor li {
+#nav-doktor-pc li {
+    margin-top: 20px;
+}
+
+#nav-doktor-phone ul {
+    list-style-type: none;
+    padding: 0;
+}
+#nav-doktor-phone li {
     margin-top: 20px;
 }
 
@@ -125,6 +148,37 @@
 .box-split-last {
     width: 20%;
     padding: 10px;
+    display: flex;
+}
+
+.accept-button {
+    color: black;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    transition: ease-in-out 0.5;
+}
+
+.accept-button:hover {
+    color: green;
+    cursor: pointer;
+}
+
+.decline-button {
+    color: black;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    transition: ease-in-out 0.5;
+}
+
+.decline-button:hover {
+    color: red;
+    cursor: pointer;
 }
 
 
@@ -218,12 +272,56 @@
 
 
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
+    .box-img-doktor {
+        display: none;
+    }
+    
+    .box-split-mid {
+        width: 70%;
+        padding: 5px;
+    } 
+    
+    .box-split-last {
+        width: 30%;
+        padding: 5px;
+        display: flex;
+    }
 
-    nav,
-    article {
+    .box-text-patient {
+        font-size: .8rem;
+    }
+
+    .nav-doktor-font {
+        padding-left: 20%;
+    }
+
+    body {
+        overflow: hidden;
+    }
+    #nav-doktor-pc {
+        display: none;
+    }
+
+    #nav-doktor-phone {
+        display: block;
+    }
+
+    .custom-boxshadow {
+        padding: 5px;
+        width: 90%;
+    }
+
+    .box-container-doktor {
         width: 100%;
-        height: auto;
+        padding: 0.5% 0.5%;
+        display: block;
+    }
+
+    .box-doktor {
+        width: 90%;
+        margin: 20px;
+        display: flex;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
 }

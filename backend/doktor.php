@@ -40,4 +40,22 @@
         return $result;
     }
 
+    function acceptDeclinePatientBooking($data, $id, $decline) {
+        require "../../../backend/db_conn.php";
+        $accepted = ($data == 1) ? 1 : 0;
+        if(isset($decline)) {
+            $needAccepted = 0;
+        } else if ($data == 1) {
+            $needAccepted = 0;
+        } else {
+            $needAccepted = 1;
+        }
+        
+        $query = "UPDATE booking SET accepted = $accepted, needAccepted = $needAccepted WHERE id = $id";        
+        $stmt = $conn->prepare($query); 
+        $stmt->execute();
+        return true;
+    }
+    
+
 ?>
