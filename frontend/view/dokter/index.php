@@ -3,19 +3,33 @@ session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] == '2') {
     $login = true;
+    require '../../../backend/doktor.php';
     ?>
 
 <?php    
-function getDoktor() {
-    require "../../../backend/db_conn.php";
-    $sql = "SELECT * FROM doktor where id_user = ?";
-    $stmt = $conn->prepare($sql); 
-    $stmt->execute([$_SESSION['id']]);
 
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result;
-}
 $data['doktor'] = getDoktor();
+$data['booking'] = getBooking($data['doktor']['id']);
+
+function getAccepted($id, $bookingData) {
+    $accepted = 0;
+    $declined = 0;
+    if($id == 1) {
+        foreach ($bookingData as $booking) {
+            if ($booking['accepted'] == 1) {
+                $accepted++;
+            }
+        }
+        return $accepted;
+    } else {
+        foreach ($bookingData as $booking) {
+            if ($booking['accepted'] == 0) {
+                $declined++;
+            }
+        }
+        return $declined;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +38,7 @@ $data['doktor'] = getDoktor();
     <title>CSS Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../css/doktor.css">
+    <link rel="stylesheet" href="../../css/doktors.css">
 </head>
 
 <body>
@@ -54,16 +68,15 @@ $data['doktor'] = getDoktor();
         <div class="w-20">
             <nav id="nav-doktor">
                 <ul>
-                    <li><a href="#">London</a></li>
-                    <li><a href="#">Paris</a></li>
-                    <li><a href="#">Tokyo</a></li>
+                    <li><a class="nav-doktor-font" href="index.php">Dashboard</a></li>
+                    <li><a class="nav-doktor-font" href="request_patient.php">Requested Patient</a></li>
                 </ul>
             </nav>
         </div>
         <div class="w-80 p-relative">
             <article id="article-doktor">
                 <div class="custom-boxshadow">
-                    <h1>Selamat Datang, <?= $data['doktor']['name'] ?></h1>
+                    <h1>Selamat Datang, <?= $data['doktor']['name']; $_SESSION['id'];?></h1>
                 </div>
             </article>
             <div class="box-container-doktor">
@@ -82,7 +95,7 @@ $data['doktor'] = getDoktor();
                             Jumlah Pasien Memesan
                         </div>
                         <div class="box-text-number">
-                            50
+                            <?= count($data['booking']); ?>
                         </div>
                     </div>
                 </div>
@@ -120,7 +133,7 @@ $data['doktor'] = getDoktor();
                             Jumlah Pasien Diterima
                         </div>
                         <div class="box-text-number">
-                            50
+                            <?= getAccepted(1, $data['booking']) ?>
                         </div>
                     </div>
                 </div>
@@ -138,7 +151,7 @@ $data['doktor'] = getDoktor();
                             Jumlah Pasien Ditolak
                         </div>
                         <div class="box-text-number">
-                            50
+                            <?= getAccepted(0, $data['booking']) ?>
                         </div>
                     </div>
                 </div>

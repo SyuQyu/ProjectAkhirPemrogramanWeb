@@ -67,10 +67,23 @@
     padding: 20px;
 }
 
+.nav-doktor-font {
+    color : white;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.nav-doktor-font:hover {
+    font-size: 1.2rem;
+}
+
 /* Style the list inside the menu */
 #nav-doktor ul {
     list-style-type: none;
     padding: 0;
+}
+#nav-doktor li {
+    margin-top: 20px;
 }
 
 .p-relative {
@@ -96,6 +109,24 @@
     display: flex;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
+.box-requested-patient {
+    width: 90%;
+    margin: 30px auto auto auto;
+    display: flex;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.box-split-mid {
+    width: 60%;
+    padding: 10px;
+} 
+
+.box-split-last {
+    width: 20%;
+    padding: 10px;
+}
+
 
 .box-img-doktor {
     width: 20%;
