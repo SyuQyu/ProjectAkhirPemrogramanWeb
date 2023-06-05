@@ -17,6 +17,67 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../../css/admin.css">
+        <!-- <link rel="stylesheet" href="../../css/booking.css"> -->
+
+        <style>
+        /* CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .booking {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .inputBox {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            background-color: #1c2ecd;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #footer-admin {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+
     </head>
 
     <body>
@@ -68,31 +129,31 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
             <div class="w-80 p-relative">
                 <div>
                     <section class="booking">
-                        <h1 class="heading-title">book your doctor!</h1>
-                        <form action="../../backend/package_form.php" method="post" class="book-form">
-                            <div class="inputBox" style="visibility: hidden; overflow: hidden;">
-                                <input type="text" name="id_user" value="<?= $_SESSION['id'] ?>">
-                            </div>
-                            <div class="inputBox" style="visibility: hidden; overflow: hidden;">
-                                <input type="text" name="id_dokter" value="<?= $IdDoktor ?>">
-                            </div>
-                            <div class="flex">
+                            <h1 class="heading-title">Book Your Doctor!</h1>
+                            <form action="../../backend/data_pasien.php" method="post" class="book-form">
                                 <div class="inputBox">
-                                    <span>username: </span>
-                                    <input type="text" placeholder="enter your username" name="name">
+                                    <label for="username">Username:</label>
+                                    <input type="text" id="username" placeholder="Enter your username" name="name">
                                 </div>
                                 <div class="inputBox">
-                                    <span>full name: </span>
-                                    <input type="text" placeholder="enter your fullname" name="fullname">
+                                    <label for="fullname">Full Name:</label>
+                                    <input type="text" id="fullname" placeholder="Enter your fullname" name="fullname">
                                 </div>
                                 <div class="inputBox">
-                                    <span>email: </span>
-                                    <input type="email" placeholder="enter your email" name="email">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" placeholder="Enter your email" name="email">
                                 </div>
-                            </div>
-                            <input type="submit" value="submit" class="btn" name="send">
-                        </form>
-                    </section>
+                                <div class="flex">
+                                    <div class="inputBox">
+                                        <input type="text" name="id_user" value="<?= $_SESSION['id'] ?>" style="display: none;">
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="text" name="id_dokter" value="<?= $IdDoktor ?>" style="display: none;">
+                                    </div>
+                                </div>
+                                <input type="submit" value="Submit" class="btn" name="send">
+                            </form>
+                        </section>
                 </div>
                 <footer id="footer-admin">
                     <p>Footer</p>
