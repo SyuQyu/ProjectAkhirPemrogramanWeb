@@ -71,36 +71,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
             </nav>
         </div>
         <div class="w-80 p-relative">
-            <div class="admin-table">
-            <a href="tambah_data.php"><button class="btn-add">Tambah Data</button></a>
-                <table>
-                    <thead>
-                        <tr>
-                            <th><label>No</label></th>
-                            <th><label>Username</label></th>
-                            <th><label>Full Name</label></th>
-                            <th><label>Email</label></th>
-                            <th><label>Action</label></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $counter = 1; ?>
-                        <?php foreach( $data['pasien'] as $pasien ) : ?>
-                            <?php if( $pasien['u_level'] == 1) { ?>
-                                <tr>
-                                    <td data-label="No"><?= $counter++; ?></td>
-                                    <td data-label="Username"><?=$pasien['username'] ?></td>
-                                    <td data-label="Full Name"><?=$pasien['fname'] ?></td>
-                                    <td data-label="Email"><?=$pasien['email'] ?></td>
-                                    <td data-label="Action">
-                                        <a href="edit_data.php?id=<?=$pasien['id'] ?>&uLevel=<?=$pasien['u_level'] ?>"><button class="btn-edit">Edit Data </button></a>
-                                        <a href="../../../backend/hapus_data.php?id=<?=$pasien['id'] ?>&uLevel=<?=$pasien['u_level'] ?>"><button class="btn-delete">Hapus Data </button></a>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+            <div>
+                test
             </div>
             <footer id="footer-admin">
                 <p>Footer</p>
