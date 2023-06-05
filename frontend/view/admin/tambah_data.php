@@ -70,7 +70,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
                 <div>
                     <section class="booking">
                             <h1 class="heading-title">Tambah Data</h1>
-                            <form action="<?php tambahData() ?>" method="post" class="book-form">
+                            <form action="<?php tambahDataPasien() ?>" method="post" class="book-form">
                                 <div class="inputBox">
                                     <label class="label-tambahdata" for="username">Username:</label>
                                     <input type="text" id="username" placeholder="Enter your username" name="uname">
