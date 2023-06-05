@@ -72,7 +72,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
         </div>
         <div class="w-80 p-relative">
             <div class="admin-table">
-            <a href="tambah_data.php"><button class="btn-add">Tambah Data</button></a>
+            <a href="tambah_data_pasien.php"><button class="btn-add">Tambah Data</button></a>
                 <table>
                     <thead>
                         <tr>
@@ -93,8 +93,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
                                     <td data-label="Full Name"><?=$pasien['fname'] ?></td>
                                     <td data-label="Email"><?=$pasien['email'] ?></td>
                                     <td data-label="Action">
-                                        <a href="edit_data.php?id=<?=$pasien['id'] ?>&uLevel=<?=$pasien['u_level'] ?>"><button class="btn-edit">Edit Data </button></a>
-                                        <a href="../../../backend/hapus_data.php?id=<?=$pasien['id'] ?>&uLevel=<?=$pasien['u_level'] ?>"><button class="btn-delete">Hapus Data </button></a>
+                                        <a href="edit_data_pasien.php?id=<?=$pasien['id'] ?>&uLevel=<?=$pasien['u_level'] ?>"><button class="btn-edit">Edit Data </button></a>
+                                        <a href="../../../backend/hapus_data_pasien.php?id=<?=$pasien['id'] ?>&uLevel=<?=$pasien['u_level'] ?>"><button class="btn-delete">Hapus Data </button></a>
                                     </td>
                                 </tr>
                             <?php } ?>
