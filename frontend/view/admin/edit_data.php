@@ -6,7 +6,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
     require '../../../backend/admin.php';
 ?>
     <?php
-    $data['pasien'] = getAllPasien();
+    $data['pasien'] = getPasien();
     ?>
 
     <!DOCTYPE html>
@@ -69,11 +69,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
             <div class="w-80 p-relative">
                 <div>
                     <section class="booking">
-                            <h1 class="heading-title">Tambah Data</h1>
-                            <form action="<?php tambahData() ?>" method="post" class="book-form">
+                            <h1 class="heading-title">Edit Data</h1>
+                            <form action="<?php editDataPasien() ?>" method="post" class="book-form">
                                 <div class="inputBox">
                                     <label class="label-tambahdata" for="username">Username:</label>
-                                    <input type="text" id="username" placeholder="Enter your username" name="uname">
+                                    <input type="text" id="username" placeholder="Enter your username" name="uname" value="<?php echo (isset($data['pasien']['username']))?$data['pasien']['username']:"" ?>">
                                 </div>
                                 <div class="inputBox">
                                     <label for="password">password:</label>
@@ -81,15 +81,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
                                 </div>
                                 <div class="inputBox">
                                     <label for="fullname">Full Name:</label>
-                                    <input type="text" id="fullname" placeholder="Enter your fullname" name="fname">
+                                    <input type="text" id="fullname" placeholder="Enter your fullname" name="fname" value="<?php echo (isset($data['pasien']['fname']))?$data['pasien']['fname']:"" ?>">
                                 </div>
                                 <div class="inputBox">
                                     <label for="email">Email:</label>
-                                    <input type="email" id="email" placeholder="Enter your email" name="email">
+                                    <input type="email" id="email" placeholder="Enter your email" name="email" value="<?php echo (isset($data['pasien']['email']))?$data['pasien']['email']:"" ?>">
                                 </div>
                                 <div class="inputBox">
                                     <label for="uLevel">User Level:</label>
-                                    <input type="text" id="uLevel" placeholder="Enter your user level" name="uLevel">
+                                    <input type="text" id="uLevel" placeholder="Enter your user level" name="uLevel" value="<?php echo (isset($data['pasien']['u_level']))?$data['pasien']['u_level']:"" ?>">
                                 </div>
                                 <input type="submit" value="Submit" class="btn" name="send">
                             </form>
