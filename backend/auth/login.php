@@ -43,6 +43,8 @@ if(isset($_POST['uname']) && isset($_POST['pass'])){
                         header("Location: ../../home.php");
                     } else if($ulevel == '2') {
                         header("Location: ../../frontend/view/dokter");
+                    } else if($ulevel == '3') {
+                        header("Location: ../../frontend/view/admin");
                     }
                     exit;
                 }else {

@@ -1,0 +1,470 @@
+:root {
+    --putih: #f5f6ff;
+    --biruUngu: #6875f2;
+    --biruTengah: #1c2ecd;
+    --biruTua: #051287;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none !important;
+}
+
+body {
+    overflow: hidden;
+}
+
+.flex-parent-element {
+    display: flex;
+    width: 100%;
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--biruTua);
+    font-weight: bolder;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.custom-button-user {
+    text-align: right;
+    padding-right: 20px;
+    margin: 5px;
+    transition: ease-in-out 0.3s;
+}
+
+.custom-button-user:hover {
+    text-align: right;
+    padding-right: 20px;
+    color: var(--biruUngu);
+}
+
+/* Style the header */
+#header-admin {
+    position: relative;
+    padding: 10px;
+    text-align: left;
+    margin: auto;
+    z-index: 1;
+    box-shadow: 0px 10px 20px 0px rgba(170, 169, 169, 0.5)
+}
+
+/* Create two columns/boxes that floats next to each other */
+#nav-admin-pc {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 91vh;
+    z-index: 0;
+    /* only for demonstration, should be removed */
+    background: var(--biruUngu);
+    padding: 20px;
+}
+
+#nav-admin-phone {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 95vh;
+    z-index: 0;
+    /* only for demonstration, should be removed */
+    background: var(--biruUngu);
+    padding: 20px;
+}
+
+.nav-admin-font {
+    color : white;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.nav-admin-font:hover {
+    font-size: 1.2rem;
+}
+
+/* Style the list inside the menu */
+#nav-admin-pc ul {
+    list-style-type: none;
+    padding: 0;
+}
+#nav-admin-pc li {
+    margin-top: 20px;
+}
+
+#nav-admin-phone ul {
+    list-style-type: none;
+    padding: 0;
+}
+#nav-admin-phone li {
+    margin-top: 20px;
+}
+
+.p-relative {
+    position: relative
+}
+
+#article-admin {
+    float: left;
+    padding: 20px;
+    width: 100%;
+    /* only for demonstration, should be removed */
+}
+
+.box-container-admin {
+    width: 100%;
+    padding: 1% 1%;
+    display: flex;
+}
+
+.box-admin {
+    width: 50%;
+    margin: 20px;
+    display: flex;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.box-requested-patient {
+    width: 90%;
+    margin: 30px auto auto auto;
+    display: flex;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.box-split-mid {
+    width: 60%;
+    padding: 10px;
+} 
+
+.box-split-last {
+    width: 20%;
+    padding: 10px;
+    display: flex;
+}
+
+.accept-button {
+    color: black;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    transition: ease-in-out 0.5;
+}
+
+.accept-button:hover {
+    color: green;
+    cursor: pointer;
+}
+
+.decline-button {
+    color: black;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    transition: ease-in-out 0.5;
+}
+
+.decline-button:hover {
+    color: red;
+    cursor: pointer;
+}
+
+
+.box-img-admin {
+    width: 20%;
+    padding: 2%;
+}
+
+.box-text-admin {
+    width: 80%;
+    padding: 2%;
+    display: block;
+}
+
+.box-text-patient {
+    font-size: 1.2rem;
+}
+
+.box-text-number {
+    font-size: 1.5rem;
+}
+
+/* Style the footer */
+#footer-admin {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+.custom-boxshadow {
+    padding: 10px;
+    width: 30%;
+    margin-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.dropdown {
+    cursor: pointer;
+    height: 50px;
+    width: 10%;
+    float: right;
+    line-height: 50px;
+    position: relative;
+    text-align: center;
+    text-decoration: none !important;
+    z-index: 1;
+    transform: perspective(1000px);
+}
+
+.dropdown-menu {
+    background-color: #fff;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    text-align: center;
+    top: 0;
+    visibility: hidden;
+    z-index: -99999;
+}
+
+.dropdown-menu li:first-child {
+    cursor: default;
+}
+
+.dropdown-menu a {
+    color: #000;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none !important;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+
+.dropdown-menu a:hover {
+    color: var(--biruUngu);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    width: 100%;
+    -webkit-transition: all .5s, background, 2s .5s linear;
+    transition: all .5s, background 2s .5s linear;
+}
+
+
+
+@media (max-width: 600px) {
+    .box-img-admin {
+        display: none;
+    }
+    
+    .box-split-mid {
+        width: 70%;
+        padding: 5px;
+    } 
+    
+    .box-split-last {
+        width: 30%;
+        padding: 5px;
+        display: flex;
+    }
+
+    .box-text-patient {
+        font-size: .8rem;
+    }
+
+    .nav-admin-font {
+        padding-left: 20%;
+    }
+
+    body {
+        overflow: hidden;
+    }
+    #nav-admin-pc {
+        display: none;
+    }
+
+    #nav-admin-phone {
+        display: block;
+    }
+
+    .custom-boxshadow {
+        padding: 5px;
+        width: 90%;
+    }
+
+    .box-container-admin {
+        width: 100%;
+        padding: 0.5% 0.5%;
+        display: block;
+    }
+
+    .box-admin {
+        width: 90%;
+        margin: 20px;
+        display: flex;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+}
+
+/* table css */
+.admin-table {
+    width: 100%;
+    padding: 5%;
+    height: 100vh;
+    overflow-x: scroll;
+}
+
+.btn-add {
+	background: var(--biruUngu);
+	color: #FFF;
+	font-size: 13px;
+	padding: 10px 20px;
+	border: 0;
+    margin-bottom: 1%;
+    cursor: pointer;
+}
+
+.btn-delete {
+	background: red;
+	color: #FFF;
+	font-size: 13px;
+	padding: 10px 20px;
+	border: 0;
+    margin-bottom: 1%;
+    cursor: pointer;
+    width: 80%;
+}
+
+.btn-edit {
+	background: green;
+	color: #FFF;
+	font-size: 13px;
+	padding: 10px 20px;
+	border: 0;
+    margin-bottom: 1%;
+    cursor: pointer;
+    width: 80%;
+}
+
+.admin-table table {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.admin-table table caption {
+	font-size: 1.5em;
+	margin: .5em 0 .75em;
+}
+.admin-table table tr {
+	background-color: #fff;
+	border: 1px solid #e1e5e9;
+	padding: .35em;
+	border-radius: 3px;
+    word-break: break-all;
+}
+.admin-table table thead tr:first-child {
+    border: 1px solid var(--biruUngu);
+}
+.admin-table table th,
+.admin-table table td {
+	padding: 1.625em;
+	text-align: center;
+	color: #9da9b9;
+	font-size: 14px;
+}
+
+.admin-table table th {
+	font-size: .85em;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	background: var(--biruUngu);
+	color: #FFF;
+}
+
+.admin-table table tbody tr td .btn-invoice {
+	background: var(--biruUngu);
+	color: #FFF;
+	font-size: 13px;
+	padding: 10px 20px;
+	border: 0;
+}
+
+.admin-table tbody tr:nth-child(even) {
+	background-color: #eee;
+}
+
+.admin-table tbody tr:nth-child(odd) {
+	background-color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+	.admin-table table {
+		border: 0;
+	}
+	.admin-table table caption {
+		font-size: 1.3em;
+	}
+	.admin-table table thead {
+		border: none;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		position: absolute;
+		width: 1px;
+		padding: 0;
+	}
+	.admin-table table tr {
+		border-bottom: 3px solid #e1e5e9;
+		display: block;
+		margin-bottom: .625em;
+	}
+	.admin-table table th,
+	.admin-table table td {
+		padding: 0.625em;
+	}
+	.admin-table table td {
+		border-bottom: 1px solid #e1e5e9;
+		display: block;
+		font-size: .8em;
+		text-align: right;
+		color: #9da9b9;
+	}
+	.admin-table table td::before {
+		content: attr(data-label);
+		float: left;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #656971;
+	}
+	.admin-table table td:last-child {
+		border-bottom: 0;
+	}
+	.admin-table table td:nth-child(4) {
+		font-size: 0.8em;
+	}
+}
