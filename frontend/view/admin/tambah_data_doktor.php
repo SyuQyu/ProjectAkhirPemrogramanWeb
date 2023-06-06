@@ -72,8 +72,20 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
                             <h1 class="heading-title">Tambah Data</h1>
                             <form action="<?php tambahDataDoktor() ?>" method="post" class="book-form">
                                 <div class="inputBox">
-                                    <label class="label-tambahdata" for="name">Name:</label>
-                                    <input type="text" id="name" placeholder="Enter your name" name="name">
+                                    <label class="label-tambahdata" for="username">Username :</label>
+                                    <input type="text" id="username" placeholder="Enter your username" name="username">
+                                </div>
+                                <div class="inputBox">
+                                    <label class="label-tambahdata" for="password">Password :</label>
+                                    <input type="password" id="password" placeholder="Enter your password" name="password">
+                                </div>
+                                <div class="inputBox">
+                                    <label class="label-tambahdata" for="fullname">Full Name:</label>
+                                    <input type="text" id="fullname" placeholder="Enter your full name" name="fullname">
+                                </div>
+                                <div class="inputBox">
+                                    <label class="label-tambahdata" for="email">Email:</label>
+                                    <input type="email" id="email" placeholder="Enter your full name" name="email">
                                 </div>
                                 <div class="inputBox">
                                     <label for="review">Review:</label>

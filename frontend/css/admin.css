@@ -426,6 +426,8 @@ body {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 5px;
+    overflow: scroll;
+    height: 92vh;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 

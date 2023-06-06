@@ -72,24 +72,36 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
                             <h1 class="heading-title">Edit Data</h1>
                             <form action="<?php editDataDoktor() ?>" method="post" class="book-form">
                                 <div class="inputBox">
-                                    <label class="label-tambahdata" for="username">Name:</label>
-                                    <input type="text" id="username" placeholder="Enter your name" name="name" value="<?php echo (isset($data['doktor']['username']))?$data['doktor']['username']:"" ?>">
+                                    <label class="label-tambahdata" for="username">Username :</label>
+                                    <input type="text" id="username" placeholder="Enter your username" name="username">
                                 </div>
                                 <div class="inputBox">
-                                    <label for="password">password:</label>
-                                    <input type="password" id="password" placeholder="Enter your password" name="pass">
+                                    <label class="label-tambahdata" for="password">Password :</label>
+                                    <input type="password" id="password" placeholder="Enter your password" name="password">
                                 </div>
                                 <div class="inputBox">
-                                    <label for="fullname">Full Name:</label>
-                                    <input type="text" id="fullname" placeholder="Enter your fullname" name="fname" value="<?php echo (isset($data['doktor']['fname']))?$data['pasien']['fname']:"" ?>">
+                                    <label class="label-tambahdata" for="fullname">Full Name:</label>
+                                    <input type="text" id="fullname" placeholder="Enter your full name" name="fullname">
                                 </div>
                                 <div class="inputBox">
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" placeholder="Enter your email" name="email" value="<?php echo (isset($data['doktor']['email']))?$data['pasien']['email']:"" ?>">
+                                    <label class="label-tambahdata" for="email">Email:</label>
+                                    <input type="email" id="email" placeholder="Enter your full name" name="email">
                                 </div>
                                 <div class="inputBox">
-                                    <label for="uLevel">User Level:</label>
-                                    <input type="text" id="uLevel" placeholder="Enter your user level" name="uLevel" value="<?php echo (isset($data['doktor']['u_level']))?$data['pasien']['u_level']:"" ?>">
+                                    <label for="review">Review:</label>
+                                    <input type="text" id="review" placeholder="Enter your review" name="review">
+                                </div>
+                                <div class="inputBox">
+                                    <label for="harga">Price:</label>
+                                    <input type="text" id="harga" placeholder="Enter your harga" name="harga">
+                                </div>
+                                <div class="inputBox">
+                                    <label for="spesialis">Spesialis:</label>
+                                    <input type="text" id="spesialis" placeholder="Enter your spesialis" name="spesialis">
+                                </div>
+                                <div class="inputBox">
+                                    <label for="experience">Experience:</label>
+                                    <input type="text" id="experience" placeholder="Enter your experience" name="experience">
                                 </div>
                                 <input type="submit" value="Submit" class="btn" name="send">
                             </form>
