@@ -128,6 +128,53 @@
         }
     }
 
+    function tambahDataDoktor() {
+        require "../../../backend/db_conn.php";
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Mengambil data dari form
+            $name = $_POST['name'];
+            $harga = $_POST['harga'];
+            $spesialis = $_POST['spesialis'];
+            $pengalaman = $_POST['pengalaman'];
+            $review = $_POST['review'];
+            $data = "name=".$name."&harga=".$harga."&spesialis=".$spesialis."&pengalaman=".$pengalaman."&review=".$review;
+    
+            if (empty($name)) {
+                $em = "Full name is required";
+                header("Location: ../frontend/view/admin/tambah_data_doktor.php';");
+                exit;
+            }else if(empty($harga)){
+                $em = "Price is required";
+                header("Location: ../frontend/view/admin/tambah_data_doktor.php';");
+                exit;
+            }else if(empty($spesialis)){
+                $em = "Spesialis is required";
+                header("Location: ../frontend/view/admin/tambah_data_doktor.php';");
+                exit;
+            } else if(empty($pengalaman)){
+                $em = "Experience is required";
+                header("Location: ../frontend/view/admin/tambah_data_doktor.php';");
+                exit;
+            } else if(empty($review)){
+                $em = "Review is required";
+                header("Location: ../frontend/view/admin/tambah_data_doktor.php';");
+                exit;
+            }else {
+        
+                // hashing the password
+        
+                $sql = "INSERT INTO doktor(name, review, harga, spesialis, pengalaman) VALUES(?,?,?,?,?)";
+                $stmt = $conn->prepare($sql);
+                $result = $stmt->execute([$name, $review, $harga, $spesialis, $pengalaman]);
+        
+                if($result) {
+                    echo "<script>alert('Data berhasil ditambah.');window.location='../frontend/view/admin/index.php';</script>";
+                    exit;
+                }
+            }
+        }
+    }
+
     function editDataDoktor() {
         require "../../../backend/db_conn.php";
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -171,5 +218,7 @@
             }
         }
     }
+    
+    
 
 ?>
