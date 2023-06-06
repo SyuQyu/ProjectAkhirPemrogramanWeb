@@ -73,7 +73,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
                             <form action="<?php editDataDoktor() ?>" method="post" class="book-form">
                                 <div class="inputBox">
                                     <label class="label-tambahdata" for="username">Name:</label>
-                                    <input type="text" id="name" placeholder="Enter your name" name="name" value="<?php echo (isset($data['doktor']['name']))?$data['doktor']['name']:"" ?>">
+                                    <input type="text" id="username" placeholder="Enter your name" name="name" value="<?php echo (isset($data['doktor']['username']))?$data['doktor']['username']:"" ?>">
                                 </div>
                                 <div class="inputBox">
                                     <label for="password">password:</label>

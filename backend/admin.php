@@ -32,7 +32,7 @@
 
     function getDoktor() {
         require "../../../backend/db_conn.php";
-        $sql = "SELECT * FROM doktor where id = ?";
+        $sql = "SELECT * FROM userdata where id = ?";
         $stmt = $conn->prepare($sql); 
         $stmt->execute([$_GET['id']]);
     

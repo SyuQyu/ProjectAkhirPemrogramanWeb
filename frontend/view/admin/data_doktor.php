@@ -90,7 +90,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
                                     <td data-label="Email"><?= $doktor['email'] ?></td>
                                     <td data-label="Action">
                                         <a href="edit_data_doktor.php?id=<?=$doktor['id'] ?>"><button class="btn-edit">Edit Data </button></a>
-                                        <a href="../../../backend/hapus_data_pasien.php?id=<?=$pasien['id'] ?>&uLevel=<?=$pasien['u_level'] ?>"><button class="btn-delete">Hapus Data </button></a>
+                                        <a href="hapus_data_doktor.php?id=<?=$doktor['id_user'] ?>"><button class="btn-delete">Hapus Data </button></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
