@@ -160,16 +160,14 @@
                 header("Location: ../frontend/view/admin/tambah_data_doktor.php';");
                 exit;
             }else {
-        
-                // hashing the password
-        
-                $sql = "INSERT INTO doktor(name, review, harga, spesialis, pengalaman) VALUES(?,?,?,?,?)";
+                
+                $sql = "INSERT INTO doktor (name, review, harga, spesialis, pengalaman) VALUES(?,?,?,?,?)";
                 $stmt = $conn->prepare($sql);
                 $result = $stmt->execute([$name, $review, $harga, $spesialis, $pengalaman]);
         
                 if($result) {
-                    echo "<script>alert('Data berhasil ditambah.');window.location='../frontend/view/admin/index.php';</script>";
-                    exit;
+                    $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    header("Location: data_doktor.php");
                 }
             }
         }
@@ -184,7 +182,10 @@
             $pass = $_POST['pass'];
             $email = $_POST['email'];
             $uLevel = $_POST['uLevel'];
-            $data = "fname=".$fname."&uname=".$uname."&email=".$email;
+            $name = $_POST['name'];
+            $harga = $_POST['harga'];
+            $spesialis = $_POST['spesialis'];
+            $pengalaman = $_POST['pengalaman'];
     
             if (empty($fname)) {
                 $em = "Full name is required";
@@ -202,7 +203,23 @@
                 $em = "Password is required";
                 header("Location: ../frontend/view/admin/tambah_data.php';");
                 exit;
-            }else {
+            } else if(empty($name)){
+                $em = "Doktor name is required";
+                header("Location: ../frontend/view/admin/tambah_data.php';");
+                exit;
+            } else if(empty($harga)){
+                $em = "Price is required";
+                header("Location: ../frontend/view/admin/tambah_data.php';");
+                exit;
+            } else if(empty($spesialis)){
+                $em = "Spesialis is required";
+                header("Location: ../frontend/view/admin/tambah_data.php';");
+                exit;
+            } else if(empty($pengalaman)){
+                $em = "Experience is required";
+                header("Location: ../frontend/view/admin/tambah_data.php';");
+                exit;
+            } else {
         
                 // hashing the password
                 $pass = password_hash($pass, PASSWORD_DEFAULT);

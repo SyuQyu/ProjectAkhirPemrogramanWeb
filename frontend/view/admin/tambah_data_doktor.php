@@ -89,7 +89,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
                                 </div>
                                 <div class="inputBox">
                                     <label for="experience">Experience:</label>
-                                    <input type="text" id="experience" placeholder="Enter your user level" name="experience">
+                                    <input type="text" id="experience" placeholder="Enter your experience" name="experience">
                                 </div>
                                 <input type="submit" value="Submit" class="btn" name="send">
                             </form>
