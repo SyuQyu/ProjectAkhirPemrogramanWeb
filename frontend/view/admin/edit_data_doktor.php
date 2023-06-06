@@ -6,7 +6,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
     require '../../../backend/admin.php';
 ?>
     <?php
-    $data['doktor'] = getAllDoktors();
+        $data['doktor'] = getDoktor();
     ?>
 
     <!DOCTYPE html>
@@ -17,6 +17,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../../css/admin.css">
+
     </head>
 
     <body>
@@ -66,36 +67,33 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
                 </nav>
             </div>
             <div class="w-80 p-relative">
-                <div class="admin-table">
-                    <button class="btn-add">Tambah Data</button>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th><label>No</label></th>
-                                <th><label>ID User</label></th>
-                                <th><label>Name</label></th>
-                                <th><label>Username</label></th>
-                                <th><label>Email</label></th>
-                                <th><label>Action</label></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $counter = 1; ?>
-                            <?php foreach ($data['doktor'] as $doktor) : ?>
-                                <tr>
-                                    <td data-label="No"><?= $doktor['id'] ?></td>
-                                    <td data-label="ID User"><?= $doktor['id_user'] ?></td>
-                                    <td data-label="Name"><?= $doktor['name'] ?></td>
-                                    <td data-label="Username"><?= $doktor['username'] ?></td>
-                                    <td data-label="Email"><?= $doktor['email'] ?></td>
-                                    <td data-label="Action">
-                                        <a href="edit_data_doktor.php?id=<?=$doktor['id'] ?>"><button class="btn-edit">Edit Data </button></a>
-                                        <a href="../../../backend/hapus_data_pasien.php?id=<?=$pasien['id'] ?>&uLevel=<?=$pasien['u_level'] ?>"><button class="btn-delete">Hapus Data </button></a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                <div>
+                    <section class="booking">
+                            <h1 class="heading-title">Edit Data</h1>
+                            <form action="<?php editDataDoktor() ?>" method="post" class="book-form">
+                                <div class="inputBox">
+                                    <label class="label-tambahdata" for="username">Name:</label>
+                                    <input type="text" id="name" placeholder="Enter your name" name="name" value="<?php echo (isset($data['doktor']['name']))?$data['doktor']['name']:"" ?>">
+                                </div>
+                                <div class="inputBox">
+                                    <label for="password">password:</label>
+                                    <input type="password" id="password" placeholder="Enter your password" name="pass">
+                                </div>
+                                <div class="inputBox">
+                                    <label for="fullname">Full Name:</label>
+                                    <input type="text" id="fullname" placeholder="Enter your fullname" name="fname" value="<?php echo (isset($data['doktor']['fname']))?$data['pasien']['fname']:"" ?>">
+                                </div>
+                                <div class="inputBox">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" placeholder="Enter your email" name="email" value="<?php echo (isset($data['doktor']['email']))?$data['pasien']['email']:"" ?>">
+                                </div>
+                                <div class="inputBox">
+                                    <label for="uLevel">User Level:</label>
+                                    <input type="text" id="uLevel" placeholder="Enter your user level" name="uLevel" value="<?php echo (isset($data['doktor']['u_level']))?$data['pasien']['u_level']:"" ?>">
+                                </div>
+                                <input type="submit" value="Submit" class="btn" name="send">
+                            </form>
+                        </section>
                 </div>
                 <footer id="footer-admin">
                     <p>Footer</p>

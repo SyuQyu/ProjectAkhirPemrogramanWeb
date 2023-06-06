@@ -1,7 +1,8 @@
 <?php 
     function getAllDoktors() {
         require "../../../backend/db_conn.php";
-        $sql = "SELECT * FROM userdata WHERE u_level = 2";
+        $sql = "SELECT doktor.id , doktor.id_user, doktor.name, userdata.username, userdata.email from doktor
+        inner join userdata on doktor.id_user = userdata.id";
         $stmt = $conn->prepare($sql); 
         $stmt->execute();
     
@@ -22,6 +23,16 @@
     function getPasien() {
         require "../../../backend/db_conn.php";
         $sql = "SELECT * FROM userdata where id = ?";
+        $stmt = $conn->prepare($sql); 
+        $stmt->execute([$_GET['id']]);
+    
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    function getDoktor() {
+        require "../../../backend/db_conn.php";
+        $sql = "SELECT * FROM doktor where id = ?";
         $stmt = $conn->prepare($sql); 
         $stmt->execute([$_GET['id']]);
     
@@ -117,6 +128,48 @@
         }
     }
 
-
+    function editDataDoktor() {
+        require "../../../backend/db_conn.php";
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Mengambil data dari form
+            $fname = $_POST['fname'];
+            $uname = $_POST['uname'];
+            $pass = $_POST['pass'];
+            $email = $_POST['email'];
+            $uLevel = $_POST['uLevel'];
+            $data = "fname=".$fname."&uname=".$uname."&email=".$email;
+    
+            if (empty($fname)) {
+                $em = "Full name is required";
+                header("Location: ../frontend/view/admin/tambah_data.php';");
+                exit;
+            }else if(empty($uname)){
+                $em = "User name is required";
+                header("Location: ../frontend/view/admin/tambah_data.php';");
+                exit;
+            }else if(empty($pass)){
+                $em = "Password is required";
+                header("Location: ../frontend/view/admin/tambah_data.php';");
+                exit;
+            } else if(empty($email)){
+                $em = "Password is required";
+                header("Location: ../frontend/view/admin/tambah_data.php';");
+                exit;
+            }else {
+        
+                // hashing the password
+                $pass = password_hash($pass, PASSWORD_DEFAULT);
+        
+                $sql = "INSERT INTO userdata(username, password, fname, email, u_level) VALUES(?,?,?,?,?)";
+                $stmt = $conn->prepare($sql);
+                $result = $stmt->execute([$uname, $pass, $fname, $email, $uLevel]);
+        
+                if($result) {
+                    echo "<script>alert('Data berhasil ditambah.');window.location='../frontend/view/admin/index.php';</script>";
+                    exit;
+                }
+            }
+        }
+    }
 
 ?>
