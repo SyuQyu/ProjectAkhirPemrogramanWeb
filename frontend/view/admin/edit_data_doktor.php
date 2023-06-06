@@ -6,7 +6,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
     require '../../../backend/admin.php';
 ?>
     <?php
-        $data['doktor'] = getDoktor();
+        $data['doktor'] = getDoktorJoin();
     ?>
 
     <!DOCTYPE html>
@@ -73,7 +73,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
                             <form action="<?php editDataDoktor() ?>" method="post" class="book-form">
                                 <div class="inputBox">
                                     <label class="label-tambahdata" for="username">Username :</label>
-                                    <input type="text" id="username" placeholder="Enter your username" name="username">
+                                    <input type="text" id="username" placeholder="Enter your username" name="username" value="<?= $data['doktor']['username'] ?>">
                                 </div>
                                 <div class="inputBox">
                                     <label class="label-tambahdata" for="password">Password :</label>
@@ -81,27 +81,27 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname']) && $_SESSION['ulevel'] =
                                 </div>
                                 <div class="inputBox">
                                     <label class="label-tambahdata" for="fullname">Full Name:</label>
-                                    <input type="text" id="fullname" placeholder="Enter your full name" name="fullname">
+                                    <input type="text" id="fullname" placeholder="Enter your full name" name="fullname" value="<?= $data['doktor']['name'] ?>">
                                 </div>
                                 <div class="inputBox">
                                     <label class="label-tambahdata" for="email">Email:</label>
-                                    <input type="email" id="email" placeholder="Enter your full name" name="email">
+                                    <input type="email" id="email" placeholder="Enter your full name" name="email" value="<?= $data['doktor']['email'] ?>">
                                 </div>
                                 <div class="inputBox">
                                     <label for="review">Review:</label>
-                                    <input type="text" id="review" placeholder="Enter your review" name="review">
+                                    <input type="text" id="review" placeholder="Enter your review" name="review" value="<?= $data['doktor']['review'] ?>">
                                 </div>
                                 <div class="inputBox">
                                     <label for="harga">Price:</label>
-                                    <input type="text" id="harga" placeholder="Enter your harga" name="harga">
+                                    <input type="text" id="harga" placeholder="Enter your harga" name="harga" value="<?= $data['doktor']['harga'] ?>">
                                 </div>
                                 <div class="inputBox">
                                     <label for="spesialis">Spesialis:</label>
-                                    <input type="text" id="spesialis" placeholder="Enter your spesialis" name="spesialis">
+                                    <input type="text" id="spesialis" placeholder="Enter your spesialis" name="spesialis" value="<?= $data['doktor']['spesialis'] ?>">
                                 </div>
                                 <div class="inputBox">
                                     <label for="experience">Experience:</label>
-                                    <input type="text" id="experience" placeholder="Enter your experience" name="experience">
+                                    <input type="text" id="experience" placeholder="Enter your experience" name="experience" value="<?= $data['doktor']['pengalaman'] ?>">
                                 </div>
                                 <input type="submit" value="Submit" class="btn" name="send">
                             </form>

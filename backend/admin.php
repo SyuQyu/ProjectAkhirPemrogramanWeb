@@ -1,7 +1,7 @@
 <?php 
     function getAllDoktors() {
         require "../../../backend/db_conn.php";
-        $sql = "SELECT doktor.id , doktor.id_user, doktor.name, userdata.username, userdata.email from doktor
+        $sql = "SELECT doktor.id , doktor.id_user, doktor.name, doktor.review, doktor.harga, doktor.spesialis, doktor.pengalaman, userdata.username, userdata.email, userdata.fname from doktor
         inner join userdata on doktor.id_user = userdata.id";
         $stmt = $conn->prepare($sql); 
         $stmt->execute();
@@ -9,6 +9,20 @@
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    function getDoktorJoin() {
+        require "../../../backend/db_conn.php";
+        $sql = "SELECT doktor.id, doktor.id_user, doktor.name, doktor.review, doktor.harga, doktor.spesialis, doktor.pengalaman, userdata.username, userdata.email, userdata.fname 
+                FROM doktor
+                INNER JOIN userdata ON doktor.id_user = userdata.id
+                WHERE userdata.id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$_GET['id']]);
+    
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+    
 
     function getAllPasien() {
         require "../../../backend/db_conn.php";
@@ -61,37 +75,18 @@
             $email = $_POST['email'];
             $uLevel = $_POST['uLevel'];
             $data = "fname=".$fname."&uname=".$uname."&email=".$email;
-    
-            if (empty($fname)) {
-                $em = "Full name is required";
-                header("Location: ../frontend/view/admin/tambah_data.php';");
-                exit;
-            }else if(empty($uname)){
-                $em = "User name is required";
-                header("Location: ../frontend/view/admin/tambah_data.php';");
-                exit;
-            }else if(empty($pass)){
-                $em = "Password is required";
-                header("Location: ../frontend/view/admin/tambah_data.php';");
-                exit;
-            } else if(empty($email)){
-                $em = "Password is required";
-                header("Location: ../frontend/view/admin/tambah_data.php';");
-                exit;
-            }else {
-        
                 // hashing the password
-                $pass = password_hash($pass, PASSWORD_DEFAULT);
+                if(!empty($_POST['pass'])) {
+                    $pass = password_hash($pass, PASSWORD_DEFAULT);
+                }
         
                 $sql = "UPDATE userdata SET username = ?, password = ?, fname = ?, email = ?, u_level = ? WHERE id = ?";
                 $stmt = $conn->prepare($sql);
                 $result = $stmt->execute([$uname, $pass, $fname, $email, $uLevel, $_GET['id']]);
         
                 if($result) {
-                    echo "<script>alert('Data berhasil ditambah.');window.location='../frontend/view/admin/index.php';</script>";
-                    exit;
+                    echo "<script>alert('Data berhasil ditambah.')</script>";
                 }
-            }
         }
     }
 
@@ -108,19 +103,19 @@
     
             if (empty($fname)) {
                 $em = "Full name is required";
-                header("Location: ../frontend/view/admin/tambah_data.php';");
+                header("Location: ./tambah_data_pasien.php");
                 exit;
             }else if(empty($uname)){
                 $em = "User name is required";
-                header("Location: ../frontend/view/admin/tambah_data.php';");
+                header("Location: ./tambah_data_pasien.php");
                 exit;
             }else if(empty($pass)){
                 $em = "Password is required";
-                header("Location: ../frontend/view/admin/tambah_data.php';");
+                header("Location: ./tambah_data_pasien.php");
                 exit;
             } else if(empty($email)){
                 $em = "Password is required";
-                header("Location: ../frontend/view/admin/tambah_data.php';");
+                header("Location: ./tambah_data_pasien.php");
                 exit;
             }else {
         
@@ -132,8 +127,7 @@
                 $result = $stmt->execute([$uname, $pass, $fname, $email, $uLevel]);
         
                 if($result) {
-                    echo "<script>alert('Data berhasil ditambah.');window.location='../frontend/view/admin/index.php';</script>";
-                    exit;
+                    echo "<script>alert('Data berhasil ditambah.');";
                 }
             }
         }
@@ -156,35 +150,35 @@
     
             if (empty($username)) {
                 $em = "Username is required";
-                // header("Location: ./tambah_data_doktor.php");
+                header("Location: ./tambah_data_doktor.php");
                 exit;
             } else if (empty($password)) {
                 $em = "Password is required";
-                // header("Location: ./tambah_data_doktor.php");
+                header("Location: ./tambah_data_doktor.php");
                 exit;
             } else if (empty($fullname)) {
                 $em = "Full Name is required";
-                // header("Location: ./tambah_data_doktor.php");
+                header("Location: ./tambah_data_doktor.php");
                 exit;
             } else if (empty($email)) {
                 $em = "Email is required";
-                // header("Location: ./tambah_data_doktor.php");
+                header("Location: ./tambah_data_doktor.php");
                 exit;
             } else if (empty($harga)) {
                 $em = "Price is required";
-                // header("Location: ./tambah_data_doktor.php");
+                header("Location: ./tambah_data_doktor.php");
                 exit;
             } else if (empty($spesialis)) {
                 $em = "Spesialis is required";
-                // header("Location: ./tambah_data_doktor.php");
+                header("Location: ./tambah_data_doktor.php");
                 exit;
             } else if (empty($pengalaman)) {
                 $em = "Experience is required";
-                // header("Location: ./tambah_data_doktor.php");
+                header("Location: ./tambah_data_doktor.php");
                 exit;
             } else if (empty($review)) {
                 $em = "Review is required";
-                // header("Location: ./tambah_data_doktor.php");
+                header("Location: ./tambah_data_doktor.php");
                 exit;
             } else {
                 // Hashing the password
@@ -217,53 +211,20 @@
             $pengalaman = $_POST['experience'];
             $review = $_POST['review'];
             $data = "username=".$username."&password=".$password."&fullname=".$fullname."&email=".$email."&harga=".$harga."&spesialis=".$spesialis."&pengalaman=".$pengalaman."&review=".$review;
-    
-            if (empty($username)) {
-                $em = "Username is required";
-                // header("Location: ./tambah_data_doktor.php");
-                exit;
-            } else if (empty($password)) {
-                $em = "Password is required";
-                // header("Location: ./tambah_data_doktor.php");
-                exit;
-            } else if (empty($fullname)) {
-                $em = "Full Name is required";
-                // header("Location: ./tambah_data_doktor.php");
-                exit;
-            } else if (empty($email)) {
-                $em = "Email is required";
-                // header("Location: ./tambah_data_doktor.php");
-                exit;
-            } else if (empty($harga)) {
-                $em = "Price is required";
-                // header("Location: ./tambah_data_doktor.php");
-                exit;
-            } else if (empty($spesialis)) {
-                $em = "Spesialis is required";
-                // header("Location: ./tambah_data_doktor.php");
-                exit;
-            } else if (empty($pengalaman)) {
-                $em = "Experience is required";
-                // header("Location: ./tambah_data_doktor.php");
-                exit;
-            } else if (empty($review)) {
-                $em = "Review is required";
-                // header("Location: ./tambah_data_doktor.php");
-                exit;
-            } else {
                 // Hashing the password
-                $password = password_hash($password, PASSWORD_DEFAULT);
-    
-                $sql = "UPDATE userdata SET username = ?, password = ?, fname = ?, email = ? WHERE id = ?";
-                $result = $stmt->execute([$username, $password, $fullname, $email, $_GET['id']]);
-                $stmt = $conn->prepare($sql);
-                if ($result) {
-                    $lastInsertedId = $conn->lastInsertId();
-                    $sqldoktor = "INSERT INTO doktor (id_user, name, review, harga, spesialis, pengalaman) VALUES(?,?,?,?,?,?)";
-                    $stmtdoktor = $conn->prepare($sqldoktor);
-                    $resultdoktor = $stmtdoktor->execute([$lastInsertedId, $fullname, $review, $harga, $spesialis, $pengalaman]);
+                if(!empty($password)) {
+                    $password = password_hash($password, PASSWORD_DEFAULT);
                 }
-            }
+
+                $sql = "UPDATE userdata SET username = ?, password = ?, fname = ?, email = ? WHERE id = ?";
+                $stmt = $conn->prepare($sql);
+                $result = $stmt->execute([$username, $password, $fullname, $email, $_GET['id']]);
+
+                if ($result) {
+                    $sqldoktor = "UPDATE doktor SET name=?, review=?, harga=?, spesialis=?, pengalaman=? WHERE id_user=?";
+                    $stmtdoktor = $conn->prepare($sqldoktor);
+                    $resultdoktor = $stmtdoktor->execute([$fullname, $review, $harga, $spesialis, $pengalaman, $_GET['id']]);
+                }
         }
     }
     
